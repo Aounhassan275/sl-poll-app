@@ -11,6 +11,8 @@ import 'package:speak_logic_poll/views/auth/signup/signup_binding.dart';
 import 'package:speak_logic_poll/views/auth/signup/signup_view.dart';
 import 'package:speak_logic_poll/views/auth/verification/verification_binding.dart';
 import 'package:speak_logic_poll/views/auth/verification/verification_view.dart';
+import 'package:speak_logic_poll/views/createpoll/wellcome/wellcome_binding.dart';
+import 'package:speak_logic_poll/views/createpoll/wellcome/wellcome_view.dart';
 import 'package:speak_logic_poll/views/splash/splash_binding.dart';
 import 'package:speak_logic_poll/views/splash/splash_view.dart';
 import 'package:speak_logic_poll/views/success/success_view.dart';
@@ -29,7 +31,7 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.signup,
-      page: () => const SignUpView(),
+      page: () => const WellComeView(),
       binding: SignupBinding(),
     ),
     GetPage(
@@ -51,6 +53,11 @@ class AppPages {
       name: AppRoutes.success,
       page: () => const SuccessView(),
       // binding: ResetBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.wellcome,
+      page: () => const WellComeView(),
+      // binding: WellComeBinding(),
     ),
   ];
 }

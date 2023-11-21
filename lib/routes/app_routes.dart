@@ -6,4 +6,5 @@ class AppRoutes {
   static const verification = '/verification';
   static const reset = '/reset';
   static const success = '/success';
+  static const wellcome = '/wellcome';
 }
