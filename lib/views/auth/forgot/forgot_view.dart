@@ -43,15 +43,19 @@ class _ForgotViewState extends State<ForgotView> {
                       Column(
                         children: [
                           Container(
-                            width: double.infinity,
-
+                              width: double.infinity,
                               padding: EdgeInsets.fromLTRB(20, 30, 20, 50),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    Icons.arrow_back_ios_new,
-                                    color: white,
+                                  GestureDetector(
+                                    onTap: () {
+                                      Get.toNamed(AppRoutes.signin);
+                                    },
+                                    child: Icon(
+                                      Icons.arrow_back_ios_new,
+                                      color: white,
+                                    ),
                                   ),
                                   SizedBox(height: 30),
                                   Text(
@@ -97,7 +101,6 @@ class _ForgotViewState extends State<ForgotView> {
                                           bottom: 4, top: 20),
                                       child: InputField(
                                         // img: 'assets/images/user.svg',
-
                                         hint: 'Email Address',
                                         controller: controller.emailController,
                                         // validator: (user) =>
@@ -125,6 +128,8 @@ class _ForgotViewState extends State<ForgotView> {
                 const EdgeInsets.only(right: 15, left: 15, top: 10, bottom: 20),
             child: MainButton(
               title: 'Submit',
+              color: pinkColor,
+              color1: white,
               onPressed: () {
                 Get.toNamed(AppRoutes.verification);
               },

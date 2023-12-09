@@ -17,6 +17,8 @@ class InputField extends StatelessWidget {
     this.validator,
     this.autovalidateMode,
     this.type = TextInputType.text,
+    this.onTap,
+    this.suffixIcon,
   }) : super(key: key);
 
   final controller;
@@ -28,6 +30,8 @@ class InputField extends StatelessWidget {
   final autovalidateMode;
   final maxlines;
   final readOnly;
+  final VoidCallback? onTap;
+  final suffixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -44,22 +48,25 @@ class InputField extends StatelessWidget {
                 : AutovalidateMode.onUserInteraction),
         style: TextStyle(color: maincolor),
         keyboardType: type,
+        onTap: onTap,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(vertical: 20, horizontal: 14),
           enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20),
-              borderSide: BorderSide.none),
+            borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide.none,
+          ),
           focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20),
-              borderSide: BorderSide.none),
+            borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide.none,
+          ),
           filled: true,
           fillColor: fillcolor,
           hintText: hint,
           hintStyle: TextStyle(
-fontSize: 14,
-fontWeight: w500,
-color: grey,
-),
+            fontSize: 14,
+            fontWeight: w500,
+            color: grey,
+          ),
         ),
       ),
     );
