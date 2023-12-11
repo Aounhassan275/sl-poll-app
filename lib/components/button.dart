@@ -1,18 +1,21 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
-import 'package:speak_logic_poll/utils/colors.dart';
 
 class MainButton extends StatelessWidget {
   const MainButton({
     super.key,
     @required this.title,
     this.buttonWidth = 0.99,
-    @required this.onPressed,
+    this.onPressed,
+    this.color,
+    this.color1,
   });
   final title;
   final buttonWidth;
   final onPressed;
+  final color;
+  final color1;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -21,7 +24,7 @@ class MainButton extends StatelessWidget {
         width: MediaQuery.of(context).size.width * buttonWidth,
         height: 60,
         decoration: ShapeDecoration(
-          color: buttonColor,
+          color: color,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
@@ -30,8 +33,8 @@ class MainButton extends StatelessWidget {
           child: Text(
             title,
             style: TextStyle(
-              color: white,
-              fontSize: 18,
+              color: color1,
+              fontSize: 16,
               fontWeight: FontWeight.w600,
             ),
           ),

@@ -18,7 +18,6 @@ class ResetView extends StatefulWidget {
 }
 
 class _ResetViewState extends State<ResetView> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,14 +43,19 @@ class _ResetViewState extends State<ResetView> {
                       Column(
                         children: [
                           Container(
-                            width: double.infinity,
+                              width: double.infinity,
                               padding: EdgeInsets.fromLTRB(20, 30, 20, 50),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    Icons.arrow_back_ios_new,
-                                    color: white,
+                                  GestureDetector(
+                                    onTap: () {
+                                      Get.toNamed(AppRoutes.verification);
+                                    },
+                                    child: Icon(
+                                      Icons.arrow_back_ios_new,
+                                      color: white,
+                                    ),
                                   ),
                                   SizedBox(height: 30),
                                   Text(
@@ -105,9 +109,9 @@ class _ResetViewState extends State<ResetView> {
                                       img: 'assets/images/lock.svg',
                                       hint: 'Confirm Password',
                                       fillcolor: grey.withOpacity(0.2),
-
                                       obscure: controller.obscureTextcPassword,
-                                      controller: controller.cpasswordController,
+                                      controller:
+                                          controller.cpasswordController,
                                       toggle: controller.toggle1,
                                     ),
                                   ]),
@@ -128,6 +132,8 @@ class _ResetViewState extends State<ResetView> {
                 const EdgeInsets.only(right: 15, left: 15, top: 10, bottom: 20),
             child: MainButton(
               title: 'Submit',
+              color: pinkColor,
+              color1: white,
               onPressed: () {
                 Get.toNamed(AppRoutes.success);
               },

@@ -18,7 +18,6 @@ class VerificationView extends StatefulWidget {
 }
 
 class _VerificationViewState extends State<VerificationView> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,16 +34,21 @@ class _VerificationViewState extends State<VerificationView> {
                   ])),
                   child: Stack(
                     children: [
-                      SvgPicture.asset(
-                        'assets/images/back.svg',
-                        fit: BoxFit.fitWidth,
-                        width: double.infinity,
-                        height: MediaQuery.of(context).size.height,
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed(AppRoutes.forgot);
+                        },
+                        child: SvgPicture.asset(
+                          'assets/images/back.svg',
+                          fit: BoxFit.fitWidth,
+                          width: double.infinity,
+                          height: MediaQuery.of(context).size.height,
+                        ),
                       ),
                       Column(
                         children: [
                           Container(
-                            width: double.infinity,
+                              width: double.infinity,
                               padding: EdgeInsets.fromLTRB(20, 30, 20, 50),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,7 +98,7 @@ class _VerificationViewState extends State<VerificationView> {
                                   child: Column(children: [
                                     Padding(
                                       padding: const EdgeInsets.only(
-                                          left: 0, right: 0,top: 40),
+                                          left: 0, right: 0, top: 40),
                                       child: PinCodeTextField(
                                         appContext: context,
                                         pastedTextStyle: TextStyle(
@@ -125,7 +129,7 @@ class _VerificationViewState extends State<VerificationView> {
                                             const Duration(milliseconds: 300),
                                         enableActiveFill: true,
                                         enablePinAutofill: true,
-                                        controller:controller.pinController,
+                                        controller: controller.pinController,
                                         keyboardType: TextInputType.number,
                                         autovalidateMode:
                                             AutovalidateMode.disabled,
@@ -153,6 +157,8 @@ class _VerificationViewState extends State<VerificationView> {
                 const EdgeInsets.only(right: 15, left: 15, top: 10, bottom: 20),
             child: MainButton(
               title: 'Submit',
+              color: pinkColor,
+              color1: white,
               onPressed: () {
                 Get.toNamed(AppRoutes.reset);
               },

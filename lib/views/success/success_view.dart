@@ -1,14 +1,11 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:speak_logic_poll/components/button.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/utils/fontWeight.dart';
-import 'package:speak_logic_poll/views/auth/verification/verification_controller.dart';
 
 class SuccessView extends StatefulWidget {
   const SuccessView({super.key});
@@ -24,8 +21,7 @@ class _SuccessViewState extends State<SuccessView> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: SizedBox(
-            width: MediaQuery.of(context).size.width,
-
+          width: MediaQuery.of(context).size.width,
           child: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width * 0.8,
@@ -34,8 +30,7 @@ class _SuccessViewState extends State<SuccessView> {
               children: [
                 Image.asset('assets/images/Frame 11.png'),
                 Padding(
-                  padding: const EdgeInsets.only(top:40.0,bottom: 12),
-                  
+                  padding: const EdgeInsets.only(top: 40.0, bottom: 12),
                   child: Text(
                     "Password Recovery\nSuccessful",
                     style: const TextStyle(
@@ -71,6 +66,8 @@ class _SuccessViewState extends State<SuccessView> {
                 const EdgeInsets.only(right: 15, left: 15, top: 10, bottom: 20),
             child: MainButton(
               title: 'Return to login',
+              color: pinkColor,
+              color1: white,
               onPressed: () {
                 Get.toNamed(AppRoutes.signin);
               },

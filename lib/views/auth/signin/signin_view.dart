@@ -81,7 +81,6 @@ class _SignInViewState extends State<SignInView> {
                                           bottom: 4, top: 4),
                                       child: IconInputField(
                                         img: 'assets/images/user.svg',
-
                                         hint: 'Email Address',
                                         controller: controller.emailController,
                                         // validator: (user) =>
@@ -99,7 +98,7 @@ class _SignInViewState extends State<SignInView> {
                                     ),
                                     SizedBox(height: 12),
                                     GestureDetector(
-                                      onTap: (){
+                                      onTap: () {
                                         Get.toNamed(AppRoutes.forgot);
                                       },
                                       child: Align(
@@ -131,8 +130,12 @@ class _SignInViewState extends State<SignInView> {
             padding:
                 const EdgeInsets.only(right: 15, left: 15, top: 10, bottom: 20),
             child: MainButton(
-              title: 'Sign in',
-              onPressed: () {},
+              title: 'Login',
+              onPressed: () {
+                Get.toNamed(AppRoutes.home);
+              },
+              color: pinkColor,
+              color1: white,
             ),
           ),
           Align(

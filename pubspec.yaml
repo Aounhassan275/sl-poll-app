@@ -41,6 +41,12 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   toggle_switch: ^2.1.0
   filter_list: ^1.0.2
+  dropdown_textfield: ^1.0.8
+  country_picker: ^2.0.22
+  csc_picker: ^0.2.7
+  intl: ^0.18.1
+  dots_indicator: ^3.0.0
+ 
 
 dev_dependencies:
   flutter_test:

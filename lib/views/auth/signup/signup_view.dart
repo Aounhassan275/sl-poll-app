@@ -142,13 +142,17 @@ class _SignUpViewState extends State<SignUpView> {
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
-            padding: const EdgeInsets.only(right: 15, left: 15,top: 10,bottom: 20),
+            padding:
+                const EdgeInsets.only(right: 15, left: 15, top: 10, bottom: 20),
             child: MainButton(
               title: 'Sign Up',
-              onPressed: () {},
+              color1: white,
+              color: pinkColor,
+              onPressed: () {
+                Get.toNamed(AppRoutes.home);
+              },
             ),
           ),
-
           Align(
             alignment: Alignment.center,
             child: Container(
