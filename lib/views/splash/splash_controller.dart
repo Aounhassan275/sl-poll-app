@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SplashController extends GetxController {
-  static SplashController instance = Get.find();
+class InvitationsController extends GetxController {
+  static InvitationsController instance = Get.find();
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -16,5 +16,4 @@ class SplashController extends GetxController {
     obscureTextPassword = !obscureTextPassword;
     update();
   }
-
 }
