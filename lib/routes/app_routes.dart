@@ -6,6 +6,13 @@ class AppRoutes {
   static const verification = '/verification';
   static const reset = '/reset';
   static const success = '/success';
+  static const resultscreen = '/resultscreen ';
+  // static const myresultscreen = '/myresultscreen';
+  // static const mypollsscreen = '/mypollsscreen';
+
+  static const pollscreen = '/pollscreen';
+
+  static const pollscreenbrowse = '/pollscreenbrowse';
   static const home = '/home';
   static const drawer = '/drawer';
   static const profile = '/profile';
