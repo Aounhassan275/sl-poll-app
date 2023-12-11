@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:speak_logic_poll/views/createpoll/manual_enter_2.dart/manual_enter_controller2.dart';
+import 'package:speak_logic_poll/views/createpoll/manual_enter_8.dart%20copy%202/manual_enter_controller8.dart';
 
 class ManualEnterBinding8 extends Bindings {
   @override

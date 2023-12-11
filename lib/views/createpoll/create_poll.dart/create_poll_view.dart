@@ -5,6 +5,7 @@ import 'package:speak_logic_poll/components/button.dart';
 import 'package:speak_logic_poll/components/divider.dart';
 import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
+import 'package:speak_logic_poll/views/createpoll/home/home_screen/home_view.dart';
 
 enum ProductTypeEnum { Downloadable, Deliverable }
 
@@ -32,12 +33,20 @@ class _CreatePollStraightViewState extends State<CreatePollStraightView> {
             actions: [
               Padding(
                 padding: const EdgeInsets.only(left: 15),
-                child: Container(
-                    height: 40,
-                    width: 40,
-                    child: SvgPicture.asset(
-                      'assets/images/left_arrow.svg',
-                    )),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomeView()),
+                    );
+                  },
+                  child: Container(
+                      height: 40,
+                      width: 40,
+                      child: SvgPicture.asset(
+                        'assets/images/left_arrow.svg',
+                      )),
+                ),
               ),
             ],
             leading: Builder(

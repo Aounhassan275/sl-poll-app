@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:speak_logic_poll/views/createpoll/manual_enter_3.dart/manual_enter_controller3.dart';
+import 'package:speak_logic_poll/views/createpoll/manual_enter_6.dart%20c/manual_enter_controller6.dart';
 
 class ManualEnterBinding6 extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => ManualEnterController9());
+    Get.lazyPut(() => ManualEnterController6());
   }
 }

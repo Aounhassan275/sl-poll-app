@@ -14,10 +14,8 @@ import 'package:speak_logic_poll/views/createpoll/change_password.dart/change_pa
 import 'package:speak_logic_poll/views/createpoll/create_poll.dart/create_poll_view.dart';
 import 'package:speak_logic_poll/views/createpoll/help/help_view.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_1.dart/manual_enter_view1.dart';
-import 'package:speak_logic_poll/views/createpoll/manual_enter_3.dart/manual_enter_view3.dart';
-import 'package:speak_logic_poll/views/createpoll/manual_enter_2.dart/manual_enter_view2.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_4.dart/manual_enter_view4.dart';
-import 'package:speak_logic_poll/views/createpoll/manual_enter_5.dart%20c/manual_enter_view5.dart';
+import 'package:speak_logic_poll/views/createpoll/manual_enter_2.dart%20c/manual_enter_view2.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_6.dart%20c/manual_enter_view6.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_7.dart%20copy/manual_enter_view7.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_8.dart%20copy%202/manual_enter_view8.dart';
@@ -122,24 +120,14 @@ class AppPages {
       // binding: ManualEnterBinding1(),
     ),
     GetPage(
-      name: AppRoutes.manualenter2,
-      page: () => ManualEnterView2(),
-      // binding: ManualEnterBinding2(),
-    ),
-    GetPage(
-      name: AppRoutes.manualenter3,
-      page: () => ManualEnterView3(),
-      // binding: ManualEnterBinding3(),
-    ),
-    GetPage(
       name: AppRoutes.manualenter4,
       page: () => ManualEnterView4(),
       // binding: ManualEnterBinding4(),
     ),
     GetPage(
-      name: AppRoutes.manualenter5,
-      page: () => ManualEnterView5(),
-      // binding: ManualEnterBinding5(),
+      name: AppRoutes.manualenter2,
+      page: () => ManualEnterView2(),
+      // binding: ManualEnterBinding2(),
     ),
     GetPage(
       name: AppRoutes.manualenter6,

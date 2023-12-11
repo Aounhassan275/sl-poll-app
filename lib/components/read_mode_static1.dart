@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, unnecessary_import
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -95,6 +97,7 @@ class ReadModeStatic1 extends StatelessWidget {
                                         child: Row(children: [
                                           SvgPicture.asset(
                                             'assets/images/edit.svg',
+                                            // ignore: deprecated_member_use
                                             color: Color(0xFFE0DBDB),
                                           ),
                                           SizedBox(width: 10),

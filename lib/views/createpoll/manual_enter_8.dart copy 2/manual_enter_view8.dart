@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_import
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -132,7 +134,7 @@ class _ManualEnterView8State extends State<ManualEnterView8> {
                                           GestureDetector(
                                             onTap: () {
                                               Get.toNamed(
-                                                  AppRoutes.manualenter3);
+                                                  AppRoutes.manualenter2);
                                             },
                                             child: Text(
                                               'Problem name',

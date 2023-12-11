@@ -14,10 +14,8 @@ class AppRoutes {
   static const createpoll = '/createpoll';
   static const pollentity = '/pollentity';
   static const manualenter1 = '/manualenter1';
-  static const manualenter2 = '/manualenter2';
-  static const manualenter3 = '/manualenter3';
   static const manualenter4 = '/manualenter4';
-  static const manualenter5 = '/manualenter5';
+  static const manualenter2 = '/manualenter2';
   static const manualenter6 = '/manualenter6';
   static const manualenter7 = '/manualenter7';
   static const manualenter8 = '/manualenter8';
