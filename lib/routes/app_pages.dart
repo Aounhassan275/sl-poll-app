@@ -2,9 +2,11 @@ import 'package:get/get.dart';
 import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/views/auth/forgot/forgot_binding.dart';
 import 'package:speak_logic_poll/views/auth/forgot/forgot_view.dart';
+import 'package:speak_logic_poll/views/auth/polls/polls_view.dart';
+import 'package:speak_logic_poll/views/auth/polls/polls_view_browse.dart';
 import 'package:speak_logic_poll/views/auth/reset/reset_binding.dart';
-import 'package:speak_logic_poll/views/auth/reset/reset_controller.dart';
 import 'package:speak_logic_poll/views/auth/reset/reset_view.dart';
+import 'package:speak_logic_poll/views/auth/results/results_view.dart';
 import 'package:speak_logic_poll/views/auth/signin/signin_binding.dart';
 import 'package:speak_logic_poll/views/auth/signin/signin_view.dart';
 import 'package:speak_logic_poll/views/auth/signup/signup_binding.dart';
@@ -50,6 +52,21 @@ class AppPages {
     GetPage(
       name: AppRoutes.success,
       page: () => const SuccessView(),
+      // binding: ResetBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.resultscreen,
+      page: () => const ResultsView(),
+      // binding: ResetBinding(),
+    ),
+     GetPage(
+      name: AppRoutes.pollscreen,
+      page: () => const PollsView(),
+      // binding: ResetBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.pollscreenbrowse,
+      page: () => const PollsViewBrowse(),
       // binding: ResetBinding(),
     ),
   ];

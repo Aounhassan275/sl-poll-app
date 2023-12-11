@@ -6,4 +6,11 @@ class AppRoutes {
   static const verification = '/verification';
   static const reset = '/reset';
   static const success = '/success';
+  static const resultscreen = '/resultscreen ';
+  // static const myresultscreen = '/myresultscreen';
+  // static const mypollsscreen = '/mypollsscreen';
+
+  static const pollscreen = '/pollscreen';
+
+  static const pollscreenbrowse = '/pollscreenbrowse';
 }
