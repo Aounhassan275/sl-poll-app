@@ -18,7 +18,8 @@ class AppRoutes {
   static const profile = '/profile';
   static const help = '/help';
   static const password = '/password';
-  static const createpoll = '/createpoll';
+  static const createpollstraight = '/createpollstraight';
+  static const createpollevent = '/createpollstraightevent';
   static const pollentity = '/pollentity';
   static const manualenter1 = '/manualenter1';
   static const manualenter4 = '/manualenter4';

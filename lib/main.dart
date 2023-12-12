@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Fl Speak Logic Poll",
       initialBinding: SignupBinding(),
-      home: PollsViewBrowse(),
+      home: SignUpView(),
       getPages: AppPages.pages,
     );
   }

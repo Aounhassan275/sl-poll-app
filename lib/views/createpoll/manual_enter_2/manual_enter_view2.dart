@@ -3,7 +3,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:speak_logic_poll/components/button.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
-import 'package:speak_logic_poll/views/createpoll/home/home_screen/Drawer/drawer_view.dart';
+import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
 import 'package:speak_logic_poll/views/createpoll/poll_entity_question/poll_entity_question_view.dart';
 
 class ManualEnterView2 extends StatefulWidget {

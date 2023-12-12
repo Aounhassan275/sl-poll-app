@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/utils/fontWeight.dart';
-import 'package:speak_logic_poll/views/createpoll/create_poll.dart/create_poll_view.dart';
-import 'package:speak_logic_poll/views/createpoll/home/home_screen/Drawer/drawer_view.dart';
+import 'package:speak_logic_poll/views/createpoll/create_poll_straight/create_poll_straigth_view.dart';
+import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
 
 class PollEntityQuestionView extends StatefulWidget {
   const PollEntityQuestionView({Key? key}) : super(key: key);

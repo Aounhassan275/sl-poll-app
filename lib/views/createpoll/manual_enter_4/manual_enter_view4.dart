@@ -5,7 +5,7 @@ import 'package:speak_logic_poll/components/button.dart';
 import 'package:speak_logic_poll/components/manual_enter_container.dart';
 import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
-import 'package:speak_logic_poll/views/createpoll/home/home_screen/Drawer/drawer_view.dart';
+import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
 
 class ManualEnterView4 extends StatefulWidget {
   const ManualEnterView4({super.key});

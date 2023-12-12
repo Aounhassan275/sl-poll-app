@@ -4,16 +4,16 @@ import 'package:get/get.dart';
 import 'package:speak_logic_poll/components/button.dart';
 import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
-import 'package:speak_logic_poll/views/createpoll/home/home_screen/Drawer/drawer_view.dart';
+import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
 
-class ManualEnterView6 extends StatefulWidget {
-  const ManualEnterView6({super.key});
+class ManualEnterView9 extends StatefulWidget {
+  const ManualEnterView9({super.key});
 
   @override
-  State<ManualEnterView6> createState() => _ManualEnterView6State();
+  State<ManualEnterView9> createState() => _ManualEnterView9State();
 }
 
-class _ManualEnterView6State extends State<ManualEnterView6> {
+class _ManualEnterView9State extends State<ManualEnterView9> {
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -159,7 +159,7 @@ class _ManualEnterView6State extends State<ManualEnterView6> {
                                                                         children: [
                                                                       TextSpan(
                                                                           text:
-                                                                              'Does ',
+                                                                              'Is ',
                                                                           style:
                                                                               TextStyle(
                                                                             color:
@@ -173,11 +173,11 @@ class _ManualEnterView6State extends State<ManualEnterView6> {
                                                                           )),
                                                                       TextSpan(
                                                                         text:
-                                                                            'Solution name',
+                                                                            'Dirty Oil',
                                                                         style:
                                                                             TextStyle(
                                                                           color:
-                                                                              blue,
+                                                                              pinkColor,
                                                                           fontSize:
                                                                               20,
                                                                           fontFamily:
@@ -188,7 +188,7 @@ class _ManualEnterView6State extends State<ManualEnterView6> {
                                                                       ),
                                                                       TextSpan(
                                                                           text:
-                                                                              '\nenable the substitution for ',
+                                                                              '\nproperly identified as \n',
                                                                           style:
                                                                               TextStyle(
                                                                             color:
@@ -202,7 +202,7 @@ class _ManualEnterView6State extends State<ManualEnterView6> {
                                                                           )),
                                                                       TextSpan(
                                                                         text:
-                                                                            'Problem name',
+                                                                            'Dirty Oil Problem',
                                                                         style:
                                                                             TextStyle(
                                                                           color:
@@ -244,10 +244,10 @@ class _ManualEnterView6State extends State<ManualEnterView6> {
                                                       children: [
                                                         MainButton(
                                                           title: 'Yes',
-                                                          color1: blue,
+                                                          color1: maincolor,
                                                           buttonWidth: 0.38,
                                                           onPressed: () {},
-                                                          color: white,
+                                                          color: violet,
                                                         ),
                                                         SizedBox(
                                                           width: 10,

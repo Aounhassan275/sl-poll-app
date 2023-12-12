@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:speak_logic_poll/components/button.dart';
 import 'package:speak_logic_poll/components/custom_checkbox.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
-import 'package:speak_logic_poll/views/createpoll/home/home_screen/Drawer/drawer_view.dart';
+import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
 import 'package:speak_logic_poll/views/createpoll/poll_entity_question/poll_entity_question_view.dart';
 import 'package:speak_logic_poll/views/createpoll/read_mode1/read_mode_view1.dart';
 
