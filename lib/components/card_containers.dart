@@ -20,7 +20,6 @@ class CardContainers extends StatelessWidget {
     required this.votestext1,
     required this.votestext2,
     required this.votestext3,
-    
     required this.eyeimg,
     required this.eyetext,
     required this.checkimg,
@@ -45,7 +44,7 @@ class CardContainers extends StatelessWidget {
   final String votestext1;
   final String votestext2;
   final String votestext3;
-  
+
   final String containertext4;
   final String containertext5;
   final String eyeimg;
@@ -227,7 +226,6 @@ class CardContainers extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
-                   
                     children: [
                       Text(votestext1,
                           style: TextStyle(
@@ -236,7 +234,7 @@ class CardContainers extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                           )),
                       Padding(
-                        padding:  EdgeInsets.only(left: 3),
+                        padding: EdgeInsets.only(left: 3),
                         child: Text(votestext2,
                             style: TextStyle(
                               color: maincolor,
@@ -249,7 +247,7 @@ class CardContainers extends StatelessWidget {
                   Row(
                     children: [
                       Padding(
-                        padding:  EdgeInsets.only(right: 3),
+                        padding: EdgeInsets.only(right: 3),
                         child: Text(votestext3,
                             style: TextStyle(
                               color: maincolor,

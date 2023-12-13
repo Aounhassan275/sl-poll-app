@@ -5,6 +5,7 @@ import 'package:speak_logic_poll/components/button.dart';
 import 'package:speak_logic_poll/components/divider.dart';
 import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
+import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
 import 'package:speak_logic_poll/views/createpoll/home/home_screen/home_view.dart';
 
 enum ProductTypeEnum { Downloadable, Deliverable }
@@ -58,6 +59,7 @@ class _CreatePollStraightViewState extends State<CreatePollStraightView> {
                     ))),
             elevation: 0,
             iconTheme: IconThemeData(color: Colors.white)),
+        drawer: Drawer(child: DrawerScreenView()),
         body: Directionality(
           textDirection: TextDirection.ltr,
           child: SafeArea(
@@ -629,7 +631,6 @@ class _CreatePollStraightViewState extends State<CreatePollStraightView> {
                                           fontSize: 16,
                                           fontFamily: 'Roboto',
                                           fontWeight: FontWeight.w400,
-                                          height: 0,
                                         ),
                                       ),
                                     ],
@@ -699,16 +700,21 @@ class _CreatePollStraightViewState extends State<CreatePollStraightView> {
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 40),
-                              child: MainButton(
-                                title: 'Create poll',
-                                color: maincolor,
-                                color1: white,
-                                onPressed: () {
-                                  Get.toNamed(AppRoutes.pollentity);
-                                  // Get.toNamed(AppRoutes.manualenter);
-                                },
+                            GestureDetector(
+                              onTap: () {
+                                Get.toNamed(AppRoutes.home);
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 40),
+                                child: MainButton(
+                                  title: 'Create poll',
+                                  color: maincolor,
+                                  color1: white,
+                                  onPressed: () {
+                                    Get.toNamed(AppRoutes.pollentity);
+                                    // Get.toNamed(AppRoutes.manualenter);
+                                  },
+                                ),
                               ),
                             ),
                             SizedBox(

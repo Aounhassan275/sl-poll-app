@@ -1,15 +1,15 @@
+// ignore_for_file: unused_field, unused_import, duplicate_ignore
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:speak_logic_poll/components/button.dart';
+import 'package:speak_logic_poll/components/container_inputfield_CreateEvent.dart';
 import 'package:speak_logic_poll/components/divider.dart';
 import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
+import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
 import 'package:speak_logic_poll/views/createpoll/home/home_screen/home_view.dart';
-
-enum ProductTypeEnum { Downloadable, Deliverable }
-
-enum ProductTypeEnum1 { Country, WorldWide }
 
 class CreatePollFromEventView extends StatefulWidget {
   const CreatePollFromEventView({Key? key}) : super(key: key);
@@ -20,8 +20,9 @@ class CreatePollFromEventView extends StatefulWidget {
 }
 
 class _CreatePollFromEventViewState extends State<CreatePollFromEventView> {
-  ProductTypeEnum? _productTypeEnum;
-  ProductTypeEnum1? _productTypeEnum1;
+  bool isProblemSelected = false;
+  bool isSolutionSelected = false;
+  bool isSolutionFunctionSelected = false;
 
   String? selectedValue;
   @override
@@ -30,35 +31,40 @@ class _CreatePollFromEventViewState extends State<CreatePollFromEventView> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: AppBar(
-            toolbarHeight: 80,
-            actions: [
-              Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomeView()),
-                    );
-                  },
-                  child: Container(
-                      height: 40,
-                      width: 40,
-                      child: SvgPicture.asset(
-                        'assets/images/left_arrow.svg',
-                      )),
+          toolbarHeight: 80,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(left: 15),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeView()),
+                  );
+                },
+                child: Container(
+                  height: 40,
+                  width: 40,
+                  child: SvgPicture.asset(
+                    'assets/images/left_arrow.svg',
+                  ),
                 ),
               ),
-            ],
-            leading: Builder(
-                builder: (context) => InkWell(
-                    onTap: () => Scaffold.of(context).openDrawer(),
-                    child: SvgPicture.asset(
-                      'assets/images/menu.svg',
-                      fit: BoxFit.scaleDown,
-                    ))),
-            elevation: 0,
-            iconTheme: IconThemeData(color: Colors.white)),
+            ),
+          ],
+          leading: Builder(
+            builder: (context) => InkWell(
+              onTap: () => Scaffold.of(context).openDrawer(),
+              child: SvgPicture.asset(
+                'assets/images/menu.svg',
+                fit: BoxFit.scaleDown,
+              ),
+            ),
+          ),
+          elevation: 0,
+          iconTheme: IconThemeData(color: Colors.white),
+        ),
+        drawer: Drawer(child: DrawerScreenView()),
         body: Directionality(
           textDirection: TextDirection.ltr,
           child: SafeArea(
@@ -86,7 +92,7 @@ class _CreatePollFromEventViewState extends State<CreatePollFromEventView> {
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.w600,
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -107,435 +113,67 @@ class _CreatePollFromEventViewState extends State<CreatePollFromEventView> {
                           children: [
                             Padding(
                               padding:
-                                  const EdgeInsets.only(top: 40, bottom: 8),
+                                  const EdgeInsets.only(top: 40, bottom: 14),
                               child: CustomDivider(
-                                name: 'Poll name',
+                                name: 'Create Event',
                                 startingwidth: 8,
-                                endingwidth: 275,
-                              ),
-                            ),
-                            TextField(
-                              decoration: InputDecoration(
-                                hintText: 'Innovations and the Future',
-                                hintStyle: TextStyle(color: grey),
-                                filled: true,
-                                fillColor: lightGrey,
-                                contentPadding: EdgeInsets.symmetric(
-                                    horizontal: 16, vertical: 18),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                  borderSide: BorderSide.none,
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                  borderSide: BorderSide.none,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 24, bottom: 14),
-                              child: Column(
-                                children: [
-                                  CustomDivider(
-                                    name: 'Visibility',
-                                    startingwidth: 8,
-                                    endingwidth: 285,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Transform.scale(
-                                            scale: 1.5,
-                                            child: Radio(
-                                              value:
-                                                  ProductTypeEnum.Downloadable,
-                                              groupValue: _productTypeEnum,
-                                              visualDensity: VisualDensity(
-                                                  vertical: -1, horizontal: -1),
-                                              activeColor: Color(4283908795),
-                                              onChanged: (value) {
-                                                setState(() {
-                                                  _productTypeEnum = value;
-                                                });
-                                              },
-                                            ),
-                                          ),
-                                          Text(
-                                            'Private',
-                                            style: TextStyle(
-                                              color: Color(0xFF2E1E88),
-                                              fontSize: 16,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        width: 24,
-                                      ),
-                                      Row(
-                                        children: [
-                                          Transform.scale(
-                                            scale: 1.5,
-                                            child: Radio(
-                                              value:
-                                                  ProductTypeEnum.Deliverable,
-                                              groupValue: _productTypeEnum,
-                                              visualDensity: VisualDensity(
-                                                  vertical: -1, horizontal: -1),
-                                              activeColor: Color(4283908795),
-                                              onChanged: (value) {
-                                                setState(() {
-                                                  _productTypeEnum = value;
-                                                });
-                                              },
-                                            ),
-                                          ),
-                                          Text(
-                                            'Public',
-                                            style: TextStyle(
-                                              color: Color(0xFF2E1E88),
-                                              fontSize: 16,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          )
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 24, bottom: 14),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        CustomDivider(
-                                          name: 'Location',
-                                          startingwidth: 8,
-                                          endingwidth: 285,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Column(
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Row(
-                                            children: [
-                                              Transform.scale(
-                                                scale: 1.5,
-                                                child: Radio(
-                                                  value:
-                                                      ProductTypeEnum1.Country,
-                                                  groupValue: _productTypeEnum1,
-                                                  visualDensity: VisualDensity(
-                                                      vertical: -1,
-                                                      horizontal: -1),
-                                                  activeColor:
-                                                      Color(4283908795),
-                                                  onChanged: (value) {
-                                                    setState(() {
-                                                      _productTypeEnum1 = value;
-                                                    });
-                                                  },
-                                                ),
-                                              ),
-                                              Text(
-                                                'USA',
-                                                style: TextStyle(
-                                                  color: Color(0xFF2E1E88),
-                                                  fontSize: 16,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                          Directionality(
-                                            textDirection: TextDirection.rtl,
-                                            child: Container(
-                                              height: 44,
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 50),
-                                              decoration: ShapeDecoration(
-                                                color: Color(0xFFF5F4F9),
-                                                shape: RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(12),
-                                                ),
-                                              ),
-                                              child:
-                                                  DropdownButtonHideUnderline(
-                                                child: DropdownButton<String>(
-                                                  value: selectedValue,
-                                                  items: [
-                                                    DropdownMenuItem(
-                                                      value: 'Country',
-                                                      child: Text('Country'),
-                                                    ),
-                                                    DropdownMenuItem(
-                                                      value: 'City',
-                                                      child: Text('City'),
-                                                    ),
-                                                  ],
-                                                  onChanged: (value) {
-                                                    setState(() {
-                                                      selectedValue = value!;
-                                                    });
-                                                  },
-                                                  icon: Icon(
-                                                      Icons.arrow_drop_down),
-                                                  iconSize: 24,
-                                                  elevation: 16,
-                                                  style: TextStyle(
-                                                      color: Colors.black),
-                                                  dropdownColor: Colors.white,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(top: 14),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Transform.scale(
-                                                  scale: 1.5,
-                                                  child: Radio(
-                                                    value: ProductTypeEnum1
-                                                        .WorldWide,
-                                                    groupValue:
-                                                        _productTypeEnum1,
-                                                    visualDensity:
-                                                        VisualDensity(
-                                                            vertical: -1,
-                                                            horizontal: -1),
-                                                    activeColor:
-                                                        Color(4283908795),
-                                                    onChanged: (value) {
-                                                      setState(() {
-                                                        _productTypeEnum1 =
-                                                            value;
-                                                      });
-                                                    },
-                                                  ),
-                                                ),
-                                                Text(
-                                                  'WorldWide',
-                                                  style: TextStyle(
-                                                    color: Color(0xFF2E1E88),
-                                                    fontSize: 16,
-                                                    fontFamily: 'Roboto',
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Directionality(
-                                              textDirection: TextDirection.rtl,
-                                              child: Container(
-                                                height: 44,
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                  horizontal: 50,
-                                                ),
-                                                decoration: ShapeDecoration(
-                                                  color: Color(0xFFF5F4F9),
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12),
-                                                  ),
-                                                ),
-                                                child:
-                                                    DropdownButtonHideUnderline(
-                                                  child: DropdownButton<String>(
-                                                    value: selectedValue,
-                                                    items: [
-                                                      DropdownMenuItem(
-                                                        value: 'Country',
-                                                        child: Text('Country'),
-                                                      ),
-                                                      DropdownMenuItem(
-                                                        value: 'City',
-                                                        child: Text('City'),
-                                                      ),
-                                                    ],
-                                                    onChanged: (value) {
-                                                      setState(() {
-                                                        selectedValue = value!;
-                                                      });
-                                                    },
-                                                    icon: Icon(
-                                                        Icons.arrow_drop_down),
-                                                    iconSize: 24,
-                                                    elevation: 16,
-                                                    style: TextStyle(
-                                                        color: Colors.black),
-                                                    dropdownColor: Colors.white,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  children: [
-                                    CustomDivider(
-                                      name: 'Start date',
-                                      startingwidth: 8,
-                                      endingwidth: 90,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 14),
-                                      child: Container(
-                                        width: 158,
-                                        height: 55,
-                                        decoration: BoxDecoration(
-                                            color: lightGrey,
-                                            borderRadius:
-                                                BorderRadius.circular(20)),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
-                                          children: [
-                                            Center(
-                                                child: Text(
-                                              '29.9.2023',
-                                              style: TextStyle(
-                                                color: maincolor,
-                                                fontSize: 16,
-                                                fontFamily: 'Roboto',
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                            )),
-                                            SvgPicture.asset(
-                                                'assets/images/calendar-days.svg'),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Column(
-                                  children: [
-                                    CustomDivider(
-                                      name: 'End date',
-                                      startingwidth: 8,
-                                      endingwidth: 90,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 14),
-                                      child: Container(
-                                        width: 158,
-                                        height: 55,
-                                        decoration: BoxDecoration(
-                                            color: lightGrey,
-                                            borderRadius:
-                                                BorderRadius.circular(20)),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
-                                          children: [
-                                            Center(
-                                                child: Text(
-                                              '29.9.2023',
-                                              style: TextStyle(
-                                                color: maincolor,
-                                                fontSize: 16,
-                                                fontFamily: 'Roboto',
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                            )),
-                                            SvgPicture.asset(
-                                                'assets/images/calendar-days.svg'),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 14, bottom: 14),
-                              child: CustomDivider(
-                                name: 'Number of participants',
-                                startingwidth: 8,
-                                endingwidth: 190,
+                                endingwidth: 255,
                               ),
                             ),
                             Container(
-                              width: MediaQuery.of(context).size.width,
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 26, vertical: 18),
-                              decoration: ShapeDecoration(
-                                color: Color(0xFFF5F4F9),
-                                shape: RoundedRectangleBorder(
+                              height: 120,
+                              decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.center,
+                                  color: lightGrey),
+                              child: Column(
                                 children: [
-                                  Container(
-                                    width: 24,
-                                    height: 24,
-                                    clipBehavior: Clip.antiAlias,
-                                    decoration: BoxDecoration(),
-                                    child: Stack(children: [
-                                      SvgPicture.asset(
-                                          'assets/images/minus.svg')
-                                    ]),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: TextField(
+                                          decoration: InputDecoration(
+                                            hintText:
+                                                'Add note or explanation...',
+                                            hintStyle: TextStyle(
+                                              color: Color(0xFF9BA6BE),
+                                              fontSize: 14,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                            contentPadding:
+                                                EdgeInsets.symmetric(
+                                                    horizontal: 16,
+                                                    vertical: 18),
+                                            border: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                              borderSide: BorderSide.none,
+                                            ),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                              borderSide: BorderSide.none,
+                                            ),
+                                          ),
+                                          maxLines: 2,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  const SizedBox(width: 10),
-                                  Text(
-                                    '02',
-                                    style: TextStyle(
-                                      color: Color(0xFF2E1E88),
-                                      fontSize: 16,
-                                      fontFamily: 'Roboto',
-                                      fontWeight: FontWeight.w500,
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 10),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        GestureDetector(
+                                          onTap: () {
+                                            showPopupMenu(context);
+                                          },
+                                          child: SvgPicture.asset(
+                                              'assets/images/paperclip.svg'),
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                  const SizedBox(width: 10),
-                                  Container(
-                                    width: 24,
-                                    height: 24,
-                                    clipBehavior: Clip.antiAlias,
-                                    decoration: BoxDecoration(),
-                                    child: Stack(children: [
-                                      SvgPicture.asset('assets/images/plus.svg')
-                                    ]),
                                   ),
                                 ],
                               ),
@@ -552,152 +190,184 @@ class _CreatePollFromEventViewState extends State<CreatePollFromEventView> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 12, vertical: 8),
-                                  decoration: ShapeDecoration(
-                                    color: Color(0xFFF5F4F9),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'Problem',
-                                        style: TextStyle(
-                                          color: Color(0xFF251F67),
-                                          fontSize: 16,
-                                          fontFamily: 'Roboto',
-                                          fontWeight: FontWeight.w400,
-                                          height: 0,
-                                        ),
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      isProblemSelected = !isProblemSelected;
+                                    });
+                                  },
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 12, vertical: 8),
+                                    decoration: ShapeDecoration(
+                                      color: isProblemSelected
+                                          ? pinkColor
+                                          : lightGrey,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
                                       ),
-                                    ],
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Problem',
+                                          style: TextStyle(
+                                            color: isProblemSelected
+                                                ? white
+                                                : maincolor,
+                                            fontSize: 16,
+                                            fontFamily: 'Roboto',
+                                            fontWeight: isProblemSelected
+                                                ? FontWeight.bold
+                                                : FontWeight.w400,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 12, vertical: 8),
-                                  decoration: ShapeDecoration(
-                                    color: Color(0xFF529EE5),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'Solution',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16,
-                                          fontFamily: 'Roboto',
-                                          fontWeight: FontWeight.w600,
-                                          height: 0,
-                                        ),
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      isSolutionSelected = !isSolutionSelected;
+                                    });
+                                  },
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 12, vertical: 8),
+                                    decoration: ShapeDecoration(
+                                      color:
+                                          isSolutionSelected ? blue : lightGrey,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
                                       ),
-                                    ],
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Solution',
+                                          style: TextStyle(
+                                            color: isSolutionSelected
+                                                ? white
+                                                : maincolor,
+                                            fontSize: 16,
+                                            fontFamily: 'Roboto',
+                                            fontWeight: isSolutionSelected
+                                                ? FontWeight.bold
+                                                : FontWeight.w400,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 12, vertical: 8),
-                                  decoration: ShapeDecoration(
-                                    color: Color(0xFFF5F4F9),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'Solution Function ',
-                                        style: TextStyle(
-                                          color: Color(0xFF251F67),
-                                          fontSize: 16,
-                                          fontFamily: 'Roboto',
-                                          fontWeight: FontWeight.w400,
-                                          height: 0,
-                                        ),
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      isSolutionFunctionSelected =
+                                          !isSolutionFunctionSelected;
+                                    });
+                                  },
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 12, vertical: 8),
+                                    decoration: ShapeDecoration(
+                                      color: isSolutionFunctionSelected
+                                          ? pinkColor
+                                          : lightGrey,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
                                       ),
-                                    ],
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Solution Function ',
+                                          style: TextStyle(
+                                            color: isSolutionFunctionSelected
+                                                ? white
+                                                : maincolor,
+                                            fontSize: 16,
+                                            fontFamily: 'Roboto',
+                                            fontWeight:
+                                                isSolutionFunctionSelected
+                                                    ? FontWeight.bold
+                                                    : FontWeight.w400,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 )
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 14),
-                              child: Container(
-                                height: 120,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: lightGrey),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Expanded(
-                                          child: TextField(
-                                            decoration: InputDecoration(
-                                              hintText:
-                                                  'Add note or explanation...',
-                                              hintStyle: TextStyle(
-                                                color: Color(0xFF9BA6BE),
-                                                fontSize: 14,
-                                                fontFamily: 'Roboto',
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                              contentPadding:
-                                                  EdgeInsets.symmetric(
-                                                      horizontal: 16,
-                                                      vertical: 18),
-                                              border: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(20),
-                                                borderSide: BorderSide.none,
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(20),
-                                                borderSide: BorderSide.none,
-                                              ),
-                                            ),
-                                            maxLines: 2,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(right: 10),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          GestureDetector(
-                                            onTap: () {
-                                              showPopupMenu(context);
-                                            },
-                                            child: SvgPicture.asset(
-                                                'assets/images/paperclip.svg'),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
+                              padding:
+                                  const EdgeInsets.only(top: 14, bottom: 14),
+                              child: Visibility(
+                                visible: isProblemSelected,
+                                child: CustomDivider(
+                                  name: 'Problem name',
+                                  startingwidth: 8,
+                                  endingwidth: 245,
                                 ),
+                              ),
+                            ),
+                            Visibility(
+                              visible: isProblemSelected,
+                              child: CreateEventInputField(
+                                name: 'Enter problem name',
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 14, bottom: 14),
+                              child: Visibility(
+                                visible: isSolutionSelected,
+                                child: CustomDivider(
+                                  name: 'Solution name',
+                                  startingwidth: 8,
+                                  endingwidth: 245,
+                                ),
+                              ),
+                            ),
+                            Visibility(
+                              visible: isSolutionSelected,
+                              child: CreateEventInputField(
+                                name: 'Enter solution name',
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 14, bottom: 14),
+                              child: Visibility(
+                                visible: isSolutionFunctionSelected,
+                                child: CustomDivider(
+                                  name: 'Solution function name',
+                                  startingwidth: 8,
+                                  endingwidth: 190,
+                                ),
+                              ),
+                            ),
+                            Visibility(
+                              visible: isSolutionFunctionSelected,
+                              child: CreateEventInputField(
+                                name: 'Enter solution function name',
                               ),
                             ),
                             Padding(
@@ -707,8 +377,7 @@ class _CreatePollFromEventViewState extends State<CreatePollFromEventView> {
                                 color: maincolor,
                                 color1: white,
                                 onPressed: () {
-                                  Get.toNamed(AppRoutes.pollentity);
-                                  // Get.toNamed(AppRoutes.manualenter);
+                                  Get.toNamed(AppRoutes.home);
                                 },
                               ),
                             ),

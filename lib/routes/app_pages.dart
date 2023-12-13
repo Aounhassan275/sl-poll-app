@@ -17,7 +17,7 @@ import 'package:speak_logic_poll/views/createpoll/change_password/change_passwor
 import 'package:speak_logic_poll/views/createpoll/create_poll_event/create_poll_event_binding.dart';
 import 'package:speak_logic_poll/views/createpoll/create_poll_event/create_poll_event_view.dart';
 import 'package:speak_logic_poll/views/createpoll/create_poll_straight/create_poll_straight_binding.dart';
-import 'package:speak_logic_poll/views/createpoll/create_poll_straight/create_poll_straigth_view.dart';
+import 'package:speak_logic_poll/views/createpoll/create_poll_straight/create_poll_straight_view.dart';
 import 'package:speak_logic_poll/views/createpoll/help/help_view.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_1/manual_enter_view1.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_4/manual_enter_view4.dart';
