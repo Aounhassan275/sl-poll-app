@@ -21,7 +21,7 @@ import 'package:speak_logic_poll/views/createpoll/create_poll_straight/create_po
 import 'package:speak_logic_poll/views/createpoll/help/help_view.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_1/manual_enter_view1.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_4/manual_enter_view4.dart';
-import 'package:speak_logic_poll/views/createpoll/manual_enter_2/manual_enter_view2.dart';
+import 'package:speak_logic_poll/views/createpoll/automatic_enter_1/automatic_enter_view2.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_6/manual_enter_view6.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_7/manual_enter_view7.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_8/manual_enter_view8.dart';
@@ -33,7 +33,7 @@ import 'package:speak_logic_poll/views/createpoll/read_mode10/read_mode_view10.d
 import 'package:speak_logic_poll/views/createpoll/read_mode11/read_mode_view11.dart';
 import 'package:speak_logic_poll/views/createpoll/read_mode12/read_mode_view12.dart';
 import 'package:speak_logic_poll/views/createpoll/read_mode13/read_mode_view13.dart';
-import 'package:speak_logic_poll/views/createpoll/read_mode2/read_mode_view2.dart';
+
 import 'package:speak_logic_poll/views/createpoll/read_mode3/read_mode_view3.dart';
 import 'package:speak_logic_poll/views/createpoll/read_mode4/read_mode_view4.dart';
 import 'package:speak_logic_poll/views/createpoll/read_mode5/read_mode_view5.dart';
@@ -136,13 +136,13 @@ class AppPages {
       // binding: ManualEnterBinding1(),
     ),
     GetPage(
-      name: AppRoutes.manualenter4,
+      name: AppRoutes.automaticenter,
       page: () => ManualEnterView4(),
       // binding: ManualEnterBinding4(),
     ),
     GetPage(
       name: AppRoutes.manualenter2,
-      page: () => ManualEnterView2(),
+      page: () => AutomaticEnterView(),
       // binding: ManualEnterBinding2(),
     ),
     GetPage(
@@ -169,11 +169,6 @@ class AppPages {
       name: AppRoutes.readmode1,
       page: () => ReadModeView1(),
       // binding: ReadModeBinding1(),
-    ),
-    GetPage(
-      name: AppRoutes.readmode2,
-      page: () => ReadModeView2(),
-      // binding: ReadModeBinding2(),
     ),
     GetPage(
       name: AppRoutes.readmode3,

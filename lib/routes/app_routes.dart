@@ -22,14 +22,13 @@ class AppRoutes {
   static const createpollevent = '/createpollstraightevent';
   static const pollentity = '/pollentity';
   static const manualenter1 = '/manualenter1';
-  static const manualenter4 = '/manualenter4';
+  static const automaticenter = '/automaticenter';
   static const manualenter2 = '/manualenter2';
   static const manualenter6 = '/manualenter6';
   static const manualenter7 = '/manualenter7';
   static const manualenter8 = '/manualenter8';
   static const manualenter9 = '/manualenter9';
   static const readmode1 = '/readmode1';
-  static const readmode2 = '/readmode2';
   static const readmode3 = '/readmode3';
   static const readmode4 = '/readmode4';
   static const readmode5 = '/readmode5';
