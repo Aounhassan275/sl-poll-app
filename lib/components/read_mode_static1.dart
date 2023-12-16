@@ -10,16 +10,6 @@ import 'package:speak_logic_poll/utils/colors.dart';
 class ReadModeStatic1 extends StatefulWidget {
   const ReadModeStatic1({
     super.key,
-    required this.yesbuttoncolor,
-    required this.yesbuttontextcolor,
-    required this.nobuttoncolor,
-    required this.nobuttontextcolor,
-    required this.row1text1,
-    required this.row1text2,
-    required this.row1text2color,
-    required this.row2text1,
-    required this.row3text1,
-    required this.row3text2,
     required this.row4text1,
     required this.row4text1color,
     required this.row4text2,
@@ -27,16 +17,6 @@ class ReadModeStatic1 extends StatefulWidget {
     required this.route,
   });
 
-  final yesbuttoncolor;
-  final yesbuttontextcolor;
-  final nobuttoncolor;
-  final nobuttontextcolor;
-  final String row1text1;
-  final String row1text2;
-  final row1text2color;
-  final String row2text1;
-  final String row3text1;
-  final String row3text2;
   final String row4text1;
   final row4text1color;
   final String row4text2;
@@ -50,6 +30,18 @@ class ReadModeStatic1 extends StatefulWidget {
 class _ReadModeStatic1State extends State<ReadModeStatic1> {
   bool isYesButtonSelected = false;
   bool isNoButtonSelected = false;
+
+  bool isSelected1 = false;
+  bool isCheckBoxChecked1 = false;
+  bool ischecked1 = false;
+
+  bool isSelected2 = false;
+  bool isCheckBoxChecked2 = false;
+  bool ischecked2 = false;
+
+  bool isSelected3 = false;
+  bool isCheckBoxChecked3 = false;
+  bool ischecked3 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -138,7 +130,7 @@ class _ReadModeStatic1State extends State<ReadModeStatic1> {
                                                 MainAxisAlignment.center,
                                             children: [
                                               Text(
-                                                widget.row1text1,
+                                                'Is',
                                                 style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: 20,
@@ -147,9 +139,9 @@ class _ReadModeStatic1State extends State<ReadModeStatic1> {
                                                 ),
                                               ),
                                               Text(
-                                                widget.row1text2,
+                                                'Dirty Oil',
                                                 style: TextStyle(
-                                                  color: widget.row1text2color,
+                                                  color: pinkColor,
                                                   fontSize: 20,
                                                   fontFamily: 'Roboto',
                                                   fontWeight: FontWeight.w600,
@@ -163,7 +155,7 @@ class _ReadModeStatic1State extends State<ReadModeStatic1> {
                                                 MainAxisAlignment.center,
                                             children: [
                                               Text(
-                                                widget.row2text1,
+                                                'properly identified as',
                                                 style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: 20,
@@ -179,7 +171,7 @@ class _ReadModeStatic1State extends State<ReadModeStatic1> {
                                                 MainAxisAlignment.center,
                                             children: [
                                               Text(
-                                                widget.row3text1,
+                                                'Dirty Oil Problem',
                                                 style: TextStyle(
                                                   color: pinkColor,
                                                   fontSize: 20,
@@ -188,7 +180,7 @@ class _ReadModeStatic1State extends State<ReadModeStatic1> {
                                                 ),
                                               ),
                                               Text(
-                                                widget.row3text2,
+                                                '?',
                                                 style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: 20,
@@ -242,36 +234,46 @@ class _ReadModeStatic1State extends State<ReadModeStatic1> {
                               children: [
                                 MainButton(
                                   title: 'Yes',
-                                  color: isYesButtonSelected
-                                      ? pinkColor
-                                      : widget.yesbuttoncolor,
+                                  color:
+                                      isYesButtonSelected ? pinkColor : violet,
                                   buttonWidth: 0.38,
-                                  color1: isYesButtonSelected
-                                      ? white
-                                      : widget.yesbuttontextcolor,
+                                  color1:
+                                      isYesButtonSelected ? white : maincolor,
                                   onPressed: () {
                                     setState(() {
                                       isYesButtonSelected =
                                           !isYesButtonSelected;
                                       isNoButtonSelected = false;
                                     });
-                                    Get.toNamed(widget.route);
+                                    if (isSelected1 &&
+                                        !isSelected2 &&
+                                        !isSelected3) {
+                                      Navigator.pushNamed(
+                                          context, AppRoutes.readmode3);
+                                    } else {
+                                      Navigator.pushNamed(
+                                          context, AppRoutes.readmode6);
+                                    }
+                                    ;
                                   },
                                 ),
                                 SizedBox(width: 10),
                                 MainButton(
                                   title: 'No',
-                                  color: isNoButtonSelected
-                                      ? pinkColor
-                                      : widget.nobuttoncolor,
+                                  color:
+                                      isNoButtonSelected ? pinkColor : violet,
                                   buttonWidth: 0.38,
-                                  color1: isNoButtonSelected
-                                      ? white
-                                      : widget.nobuttontextcolor,
+                                  color1:
+                                      isNoButtonSelected ? white : maincolor,
                                   onPressed: () {
                                     setState(() {
                                       isNoButtonSelected = !isNoButtonSelected;
                                       isYesButtonSelected = false;
+                                    });
+                                    setState(() {
+                                      isYesButtonSelected =
+                                          !isYesButtonSelected;
+                                      isNoButtonSelected = false;
                                     });
                                   },
                                 ),
