@@ -14,6 +14,11 @@ class ReadModeView1 extends StatefulWidget {
 
 class _ReadModeView1State extends State<ReadModeView1> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return ReadModeStatic1(
       yesbuttoncolor: violet,
@@ -30,7 +35,7 @@ class _ReadModeView1State extends State<ReadModeView1> {
       row4text1: 'Problem name',
       row4text1color: violet,
       row4text2: '',
-      route: AppRoutes.readmode2,
+      route: AppRoutes.readmode3,
     );
   }
 }

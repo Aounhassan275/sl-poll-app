@@ -116,8 +116,10 @@ class _CreatePollFromEventViewState extends State<CreatePollFromEventView> {
                                   const EdgeInsets.only(top: 40, bottom: 14),
                               child: CustomDivider(
                                 name: 'Create Event',
-                                startingwidth: 8,
-                                endingwidth: 255,
+                                startingwidth:
+                                    MediaQuery.of(context).size.width * 0.02,
+                                endingwidth:
+                                    MediaQuery.of(context).size.width * 0.62,
                               ),
                             ),
                             Container(
@@ -183,8 +185,10 @@ class _CreatePollFromEventViewState extends State<CreatePollFromEventView> {
                                   const EdgeInsets.only(top: 14, bottom: 14),
                               child: CustomDivider(
                                 name: 'Entity in Question',
-                                startingwidth: 8,
-                                endingwidth: 225,
+                                startingwidth:
+                                    MediaQuery.of(context).size.width * 0.02,
+                                endingwidth:
+                                    MediaQuery.of(context).size.width * 0.55,
                               ),
                             ),
                             Row(
@@ -323,8 +327,10 @@ class _CreatePollFromEventViewState extends State<CreatePollFromEventView> {
                                 visible: isProblemSelected,
                                 child: CustomDivider(
                                   name: 'Problem name',
-                                  startingwidth: 8,
-                                  endingwidth: 245,
+                                  startingwidth:
+                                      MediaQuery.of(context).size.width * 0.02,
+                                  endingwidth:
+                                      MediaQuery.of(context).size.width * 0.59,
                                 ),
                               ),
                             ),
@@ -341,8 +347,10 @@ class _CreatePollFromEventViewState extends State<CreatePollFromEventView> {
                                 visible: isSolutionSelected,
                                 child: CustomDivider(
                                   name: 'Solution name',
-                                  startingwidth: 8,
-                                  endingwidth: 245,
+                                  startingwidth:
+                                      MediaQuery.of(context).size.width * 0.02,
+                                  endingwidth:
+                                      MediaQuery.of(context).size.width * 0.59,
                                 ),
                               ),
                             ),
@@ -359,8 +367,10 @@ class _CreatePollFromEventViewState extends State<CreatePollFromEventView> {
                                 visible: isSolutionFunctionSelected,
                                 child: CustomDivider(
                                   name: 'Solution function name',
-                                  startingwidth: 8,
-                                  endingwidth: 190,
+                                  startingwidth:
+                                      MediaQuery.of(context).size.width * 0.02,
+                                  endingwidth:
+                                      MediaQuery.of(context).size.width * 0.46,
                                 ),
                               ),
                             ),

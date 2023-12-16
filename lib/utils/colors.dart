@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 const maincolor = Color(4280557158);
-const grey = Color(4289967027);
+const grey = Color(0xFFB3B3B3);
 const blackgrey = Color(4285427310);
 const violet = Color(4288058052);
 const blue = Color(4283604709);

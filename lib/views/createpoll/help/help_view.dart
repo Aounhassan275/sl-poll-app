@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:speak_logic_poll/components/button.dart';
+import 'package:speak_logic_poll/components/divider.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 
 class HelpView extends StatefulWidget {
@@ -92,31 +93,14 @@ class _HelpViewState extends State<HelpView> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Container(
-                                      width: 7,
-                                      child: Divider(
-                                        color: lightGrey,
-                                        thickness: 2,
-                                      ),
-                                    ),
-                                    SizedBox(width: 10),
-                                    Text(
-                                      'Name',
-                                      style: TextStyle(
-                                        color: Color(0xFF9BA6BE),
-                                        fontSize: 13,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                    SizedBox(width: 10),
-                                    Container(
-                                      width: 290,
-                                      child: Divider(
-                                        color: lightGrey,
-                                        thickness: 2,
-                                      ),
-                                    ),
+                                    CustomDivider(
+                                        name: 'Name',
+                                        startingwidth:
+                                            MediaQuery.of(context).size.width *
+                                                0.02,
+                                        endingwidth:
+                                            MediaQuery.of(context).size.width *
+                                                0.71)
                                   ],
                                 ),
                               ),
@@ -142,31 +126,14 @@ class _HelpViewState extends State<HelpView> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Container(
-                                      width: 7,
-                                      child: Divider(
-                                        color: lightGrey,
-                                        thickness: 2,
-                                      ),
-                                    ),
-                                    SizedBox(width: 10),
-                                    Text(
-                                      'Email',
-                                      style: TextStyle(
-                                        color: Color(0xFF9BA6BE),
-                                        fontSize: 13,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                    SizedBox(width: 10),
-                                    Container(
-                                      width: 290,
-                                      child: Divider(
-                                        color: lightGrey,
-                                        thickness: 2,
-                                      ),
-                                    ),
+                                    CustomDivider(
+                                        name: 'Email',
+                                        startingwidth:
+                                            MediaQuery.of(context).size.width *
+                                                0.02,
+                                        endingwidth:
+                                            MediaQuery.of(context).size.width *
+                                                0.72)
                                   ],
                                 ),
                               ),
@@ -192,31 +159,14 @@ class _HelpViewState extends State<HelpView> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Container(
-                                      width: 7,
-                                      child: Divider(
-                                        color: lightGrey,
-                                        thickness: 2,
-                                      ),
-                                    ),
-                                    SizedBox(width: 10),
-                                    Text(
-                                      'Comments',
-                                      style: TextStyle(
-                                        color: Color(0xFF9BA6BE),
-                                        fontSize: 13,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                    SizedBox(width: 10),
-                                    Container(
-                                      width: 260,
-                                      child: Divider(
-                                        color: lightGrey,
-                                        thickness: 2,
-                                      ),
-                                    ),
+                                    CustomDivider(
+                                        name: 'Comments',
+                                        startingwidth:
+                                            MediaQuery.of(context).size.width *
+                                                0.02,
+                                        endingwidth:
+                                            MediaQuery.of(context).size.width *
+                                                0.65)
                                   ],
                                 ),
                               ),

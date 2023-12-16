@@ -2,31 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:speak_logic_poll/components/button.dart';
-import 'package:speak_logic_poll/components/custom_checkbox.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
 import 'package:speak_logic_poll/views/createpoll/poll_entity_question/poll_entity_question_view.dart';
-import 'package:speak_logic_poll/views/createpoll/read_mode1/read_mode_view1.dart';
 
-class ManualEnterView extends StatefulWidget {
+class AutomaticEnterView extends StatefulWidget {
   @override
-  _ManualEnterViewState createState() => _ManualEnterViewState();
+  _AutomaticEnterViewState createState() => _AutomaticEnterViewState();
 }
 
-class _ManualEnterViewState extends State<ManualEnterView> {
+class _AutomaticEnterViewState extends State<AutomaticEnterView> {
   final PageController _pageController = PageController();
   double currentPage = 0;
-  bool isSelected1 = false;
-  bool isCheckBoxChecked1 = false;
-  bool ischecked1 = false;
-
-  bool isSelected2 = false;
-  bool isCheckBoxChecked2 = false;
-  bool ischecked2 = false;
-
-  bool isSelected3 = false;
-  bool isCheckBoxChecked3 = false;
-  bool ischecked3 = false;
 
   @override
   void initState() {
@@ -92,43 +79,49 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                           itemBuilder: (BuildContext context, int index) {
                             switch (index) {
                               case 0:
-                                return Stack(children: [
-                                  SvgPicture.asset(
-                                    'assets/images/back.svg',
-                                    fit: BoxFit.fill,
-                                    width: double.infinity,
-                                    height: MediaQuery.of(context).size.height,
-                                  ),
-                                  Column(children: [
-                                    Container(
+                                return Stack(
+                                  children: [
+                                    SvgPicture.asset('assets/images/back.svg',
+                                        fit: BoxFit.fill,
                                         width: double.infinity,
-                                        padding:
-                                            EdgeInsets.fromLTRB(20, 0, 20, 50),
-                                        child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          top: 20, bottom: 25),
-                                                  child: Container(
-                                                      child: Text.rich(
-                                                          TextSpan(children: [
-                                                    TextSpan(
-                                                        text: 'Manual Enter',
-                                                        style: TextStyle(
-                                                            color: white,
-                                                            fontSize: 26,
-                                                            fontFamily:
-                                                                'Roboto',
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w600))
-                                                  ]))))
-                                            ])),
-                                    Flexible(
-                                        child: Container(
+                                        height:
+                                            MediaQuery.of(context).size.height),
+                                    Column(
+                                      children: [
+                                        Container(
+                                            width: double.infinity,
+                                            padding: EdgeInsets.fromLTRB(
+                                                20, 0, 20, 50),
+                                            child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              top: 20,
+                                                              bottom: 25),
+                                                      child: Container(
+                                                          child: Text.rich(
+                                                              TextSpan(
+                                                                  children: [
+                                                            TextSpan(
+                                                                text:
+                                                                    'Automatic Enter',
+                                                                style: TextStyle(
+                                                                    color:
+                                                                        white,
+                                                                    fontSize:
+                                                                        26,
+                                                                    fontFamily:
+                                                                        'Roboto',
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600))
+                                                          ]))))
+                                                ])),
+                                        Flexible(
+                                          child: Container(
                                             padding: EdgeInsets.only(
                                                 left: 20, right: 20),
                                             height: MediaQuery.of(context)
@@ -144,311 +137,184 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                     topLeft:
                                                         Radius.circular(25))),
                                             child: SingleChildScrollView(
-                                                child: Column(children: [
-                                              Column(children: [
-                                                Padding(
-                                                    padding:
-                                                        const EdgeInsets.only(
-                                                            top: 40),
-                                                    child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.min,
-                                                        children: [
-                                                          Container(
+                                              child: Column(
+                                                children: [
+                                                  Column(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                                top: 40,
+                                                                bottom: 35),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.min,
+                                                          children: [
+                                                            Container(
                                                               width: MediaQuery.of(
                                                                           context)
                                                                       .size
                                                                       .width *
                                                                   0.35,
                                                               child: Divider(
-                                                                  color:
-                                                                      lightGrey,
-                                                                  thickness:
-                                                                      2)),
-                                                          SizedBox(width: 10),
-                                                          Text('STEP 1',
+                                                                color:
+                                                                    lightGrey,
+                                                                thickness: 2,
+                                                              ),
+                                                            ),
+                                                            SizedBox(width: 10),
+                                                            Text(
+                                                              'STEP 1',
                                                               style: TextStyle(
-                                                                  color: Color(
-                                                                      4282137660),
-                                                                  fontSize: 16,
-                                                                  fontFamily:
-                                                                      'Roboto',
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500)),
-                                                          SizedBox(width: 10),
-                                                          Container(
+                                                                color: Color(
+                                                                    4282137660),
+                                                                fontSize: 16,
+                                                                fontFamily:
+                                                                    'Roboto',
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                              ),
+                                                            ),
+                                                            SizedBox(width: 10),
+                                                            Container(
                                                               width: MediaQuery.of(
                                                                           context)
                                                                       .size
                                                                       .width *
                                                                   0.35,
                                                               child: Divider(
-                                                                  color:
-                                                                      lightGrey,
-                                                                  thickness: 2))
-                                                        ])),
-                                                Padding(
-                                                    padding: const EdgeInsets
-                                                        .only(
-                                                        top: 40, bottom: 14),
-                                                    child: GestureDetector(
-                                                        onTap: () {
-                                                          setState(() {
-                                                            ischecked1 =
-                                                                !ischecked1;
-                                                            isSelected1 =
-                                                                !isSelected1;
-                                                            isCheckBoxChecked1 =
-                                                                isSelected1;
-                                                          });
-                                                        },
-                                                        child: Container(
-                                                            width:
-                                                                MediaQuery.of(
-                                                                        context)
-                                                                    .size
-                                                                    .width,
-                                                            padding:
-                                                                const EdgeInsets
-                                                                    .only(
-                                                              top: 10,
-                                                              left: 10,
-                                                              right: 20,
-                                                              bottom: 10,
+                                                                color:
+                                                                    lightGrey,
+                                                                thickness: 2,
+                                                              ),
                                                             ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Container(
+                                                        child: Text(
+                                                          'Please, enter the project identification from Speak Logic Problem Solver or from Speack Logic Challenge in order to read Problem name, Solution name and Solution Function name',
+                                                          style: TextStyle(
+                                                            color: Colors.grey,
+                                                            fontSize: 14,
+                                                            fontFamily:
+                                                                'Roboto',
+                                                            fontWeight:
+                                                                FontWeight.w400,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(top: 12),
+                                                        child: Container(
+                                                          height: 90,
+                                                          decoration: BoxDecoration(
+                                                              color: lightGrey,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20)),
+                                                          child: TextField(
+                                                            maxLines: 3,
                                                             decoration:
-                                                                ShapeDecoration(
-                                                              color: isSelected1
-                                                                  ? maincolor
-                                                                  : Color(
-                                                                      0xFFF2F8FF),
-                                                              shape:
-                                                                  RoundedRectangleBorder(
+                                                                InputDecoration(
+                                                              fillColor:
+                                                                  lightGrey,
+                                                              filled: true,
+                                                              contentPadding:
+                                                                  EdgeInsets.symmetric(
+                                                                      horizontal:
+                                                                          16,
+                                                                      vertical:
+                                                                          18),
+                                                              border:
+                                                                  OutlineInputBorder(
+                                                                borderSide:
+                                                                    BorderSide
+                                                                        .none,
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
                                                                             20),
                                                               ),
-                                                            ),
-                                                            child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .min,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .start,
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .center,
-                                                                children: [
-                                                                  CustomCheckBox(),
-                                                                  const SizedBox(
-                                                                      width:
-                                                                          10),
-                                                                  Text(
-                                                                      'Problem',
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: TextStyle(
-                                                                          color: isSelected1
-                                                                              ? Colors
-                                                                                  .white
-                                                                              : maincolor,
-                                                                          fontSize:
-                                                                              16,
-                                                                          fontFamily:
-                                                                              'Roboto',
-                                                                          fontWeight:
-                                                                              FontWeight.w600))
-                                                                ])))),
-                                                Padding(
-                                                    padding: const EdgeInsets
-                                                        .only(bottom: 14),
-                                                    child: GestureDetector(
-                                                        onTap: () {
-                                                          setState(() {
-                                                            ischecked2 =
-                                                                !ischecked2;
-                                                            isSelected2 =
-                                                                !isSelected2;
-                                                            isCheckBoxChecked2 =
-                                                                isSelected2;
-                                                          });
-                                                        },
-                                                        child: Container(
-                                                            width: MediaQuery
-                                                                    .of(context)
-                                                                .size
-                                                                .width,
-                                                            padding:
-                                                                const EdgeInsets
-                                                                    .only(
-                                                              top: 10,
-                                                              left: 10,
-                                                              right: 20,
-                                                              bottom: 10,
-                                                            ),
-                                                            decoration:
-                                                                ShapeDecoration(
-                                                              color: isSelected2
-                                                                  ? maincolor
-                                                                  : Color(
-                                                                      0xFFF2F8FF),
-                                                              shape:
-                                                                  RoundedRectangleBorder(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            20),
+                                                              hintText:
+                                                                  'Enter project identification',
+                                                              hintStyle:
+                                                                  TextStyle(
+                                                                color: grey,
+                                                                fontSize: 16,
+                                                                fontFamily:
+                                                                    'Roboto',
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w400,
                                                               ),
                                                             ),
-                                                            child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .min,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .start,
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .center,
-                                                                children: [
-                                                                  CustomCheckBox(),
-                                                                  const SizedBox(
-                                                                      width:
-                                                                          10),
-                                                                  Text(
-                                                                      'Solution',
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: TextStyle(
-                                                                          color: isSelected2
-                                                                              ? Colors
-                                                                                  .white
-                                                                              : maincolor,
-                                                                          fontSize:
-                                                                              16,
-                                                                          fontFamily:
-                                                                              'Roboto',
-                                                                          fontWeight:
-                                                                              FontWeight.w600))
-                                                                ])))),
-                                                Padding(
-                                                    padding: const EdgeInsets.only(
-                                                        bottom: 14),
-                                                    child: GestureDetector(
-                                                        onTap: () {
-                                                          setState(() {
-                                                            ischecked3 =
-                                                                !ischecked3;
-                                                            isSelected3 =
-                                                                !isSelected3;
-                                                            isCheckBoxChecked3 =
-                                                                isSelected3;
-                                                          });
-                                                        },
-                                                        child: Container(
-                                                            width:
-                                                                MediaQuery.of(
-                                                                        context)
-                                                                    .size
-                                                                    .width,
-                                                            padding:
-                                                                const EdgeInsets
-                                                                    .only(
-                                                              top: 10,
-                                                              left: 10,
-                                                              right: 20,
-                                                              bottom: 10,
-                                                            ),
-                                                            decoration: ShapeDecoration(
-                                                                color: isSelected3
-                                                                    ? maincolor
-                                                                    : Color(
-                                                                        0xFFF2F8FF),
-                                                                shape: RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            20))),
-                                                            child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .min,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .start,
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .center,
-                                                                children: [
-                                                                  CustomCheckBox(),
-                                                                  const SizedBox(
-                                                                      width:
-                                                                          10),
-                                                                  Text(
-                                                                      'Solution Function',
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: TextStyle(
-                                                                          color: isSelected3
-                                                                              ? Colors
-                                                                                  .white
-                                                                              : maincolor,
-                                                                          fontSize:
-                                                                              16,
-                                                                          fontFamily:
-                                                                              'Roboto',
-                                                                          fontWeight:
-                                                                              FontWeight.w600))
-                                                                ])))),
-                                                Padding(
-                                                    padding:
-                                                        const EdgeInsets.only(
-                                                            top: 165,
-                                                            bottom: 20),
-                                                    child: MainButton(
-                                                        title: 'Next Step',
-                                                        color: pinkColor,
-                                                        color1: white,
-                                                        onPressed: () {
-                                                          _pageController.animateToPage(
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                                top: 165,
+                                                                bottom: 20),
+                                                        child: MainButton(
+                                                          title: 'Next Step',
+                                                          color: pinkColor,
+                                                          color1: white,
+                                                          onPressed: () {
+                                                            _pageController
+                                                                .animateToPage(
                                                               1,
                                                               duration: Duration(
                                                                   milliseconds:
                                                                       400),
                                                               curve: Curves
-                                                                  .easeInOut);
-                                                        })),
-                                                Positioned(
-                                                    bottom: 20.0,
-                                                    left: 0.0,
-                                                    right: 0.0,
-                                                    child: DotsIndicator(
-                                                        onTap: (position) {
-                                                          _pageController
-                                                              .jumpToPage(
-                                                                  position);
-                                                        },
-                                                        dotsCount: 3,
-                                                        position: int.parse(
-                                                            currentPage
-                                                                .toStringAsFixed(
-                                                                    0)),
-                                                        decorator:
-                                                            DotsDecorator(
-                                                                color: Color(
-                                                                    4291680496),
-                                                                activeColor:
-                                                                    Colors
-                                                                        .pink)))
-                                              ])
-                                            ]))))
-                                  ])
-                                ]);
+                                                                  .easeInOut,
+                                                            );
+                                                          },
+                                                        ),
+                                                      ),
+                                                      Positioned(
+                                                        bottom: 20.0,
+                                                        left: 0.0,
+                                                        right: 0.0,
+                                                        child: DotsIndicator(
+                                                          onTap: (position) {
+                                                            _pageController
+                                                                .jumpToPage(
+                                                                    position);
+                                                          },
+                                                          dotsCount: 3,
+                                                          position: int.parse(
+                                                              currentPage
+                                                                  .toStringAsFixed(
+                                                                      0)),
+                                                          decorator:
+                                                              DotsDecorator(
+                                                            color: Color(
+                                                                4291680496),
+                                                            activeColor:
+                                                                Colors.pink,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                );
                               case 1:
                                 return Stack(children: [
                                   SvgPicture.asset(
@@ -474,7 +340,7 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                       child: Text.rich(
                                                           TextSpan(children: [
                                                     TextSpan(
-                                                        text: 'Manual Enter',
+                                                        text: 'Automatic Enter',
                                                         style: TextStyle(
                                                             color: Colors.white,
                                                             fontSize: 26,
@@ -483,7 +349,7 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                             fontWeight:
                                                                 FontWeight
                                                                     .w600))
-                                                  ]))))
+                                                  ])))),
                                             ])),
                                     Flexible(
                                         child: Container(
@@ -551,10 +417,11 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                           top: 20),
                                                   child: Column(children: [
                                                     Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(left: 6),
-                                                        child: Row(children: [
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              left: 6),
+                                                      child: Row(
+                                                        children: [
                                                           Text('Problem name',
                                                               style: TextStyle(
                                                                   color: grey,
@@ -564,77 +431,159 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w400))
-                                                        ])),
+                                                        ],
+                                                      ),
+                                                    ),
                                                     Padding(
-                                                        padding: const EdgeInsets
-                                                            .only(top: 8),
-                                                        child: Container(
-                                                            height: 90,
-                                                            decoration: BoxDecoration(
-                                                                color:
-                                                                    lightGrey,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            20)),
-                                                            child: TextField(
-                                                                maxLines: 3,
-                                                                decoration:
-                                                                    InputDecoration(
-                                                                        fillColor:
-                                                                            lightGrey,
-                                                                        filled:
-                                                                            true,
-                                                                        contentPadding: EdgeInsets.symmetric(
-                                                                            horizontal:
-                                                                                16,
-                                                                            vertical:
-                                                                                18),
-                                                                        border:
-                                                                            OutlineInputBorder(
-                                                                          borderSide:
-                                                                              BorderSide.none,
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(20),
-                                                                        ),
-                                                                        hintText:
-                                                                            'Enter problem name',
-                                                                        hintStyle: TextStyle(
-                                                                            color:
-                                                                                grey,
-                                                                            fontSize:
-                                                                                16,
-                                                                            fontFamily:
-                                                                                'Roboto',
-                                                                            fontWeight:
-                                                                                FontWeight.w400))))),
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              top: 8),
+                                                      child: Container(
+                                                        height: 55,
+                                                        decoration: BoxDecoration(
+                                                            color: lightGrey,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        20)),
+                                                        child: TextField(
+                                                          maxLines: 3,
+                                                          decoration:
+                                                              InputDecoration(
+                                                            fillColor:
+                                                                lightGrey,
+                                                            filled: true,
+                                                            contentPadding:
+                                                                EdgeInsets
+                                                                    .symmetric(
+                                                                        horizontal:
+                                                                            16,
+                                                                        vertical:
+                                                                            18),
+                                                            border:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  BorderSide
+                                                                      .none,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20),
+                                                            ),
+                                                            hintText:
+                                                                'Enter problem name',
+                                                            hintStyle:
+                                                                TextStyle(
+                                                              color: grey,
+                                                              fontSize: 16,
+                                                              fontFamily:
+                                                                  'Roboto',
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              left: 6, top: 24),
+                                                      child: Row(
+                                                        children: [
+                                                          Text('Solution name',
+                                                              style: TextStyle(
+                                                                  color: grey,
+                                                                  fontSize: 13,
+                                                                  fontFamily:
+                                                                      'Roboto',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w400))
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              top: 8),
+                                                      child: Container(
+                                                        height: 55,
+                                                        decoration: BoxDecoration(
+                                                            color: lightGrey,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        20)),
+                                                        child: TextField(
+                                                          maxLines: 3,
+                                                          decoration:
+                                                              InputDecoration(
+                                                            fillColor:
+                                                                lightGrey,
+                                                            filled: true,
+                                                            contentPadding:
+                                                                EdgeInsets
+                                                                    .symmetric(
+                                                                        horizontal:
+                                                                            16,
+                                                                        vertical:
+                                                                            18),
+                                                            border:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  BorderSide
+                                                                      .none,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20),
+                                                            ),
+                                                            hintText:
+                                                                'Enter Solution name',
+                                                            hintStyle:
+                                                                TextStyle(
+                                                              color: grey,
+                                                              fontSize: 16,
+                                                              fontFamily:
+                                                                  'Roboto',
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
                                                     Container(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .symmetric(
-                                                                vertical: 20,
-                                                                horizontal: 8),
-                                                        child: Row(
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .start,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Text(
-                                                                  'Add Question to a Poll',
-                                                                  style: TextStyle(
-                                                                      color:
-                                                                          grey,
-                                                                      fontSize:
-                                                                          13,
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400))
-                                                            ])),
+                                                      padding: const EdgeInsets
+                                                          .symmetric(
+                                                          vertical: 20,
+                                                          horizontal: 8),
+                                                      child: Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .start,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Text(
+                                                            'Add Question to a Poll',
+                                                            style: TextStyle(
+                                                              color: grey,
+                                                              fontSize: 13,
+                                                              fontFamily:
+                                                                  'Roboto',
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
                                                     Container(
                                                         child: Column(
                                                             mainAxisAlignment:
@@ -643,7 +592,7 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                             children: [
                                                           Column(children: [
                                                             Row(children: [
-                                                              Text('Is ',
+                                                              Text('Does ',
                                                                   style: TextStyle(
                                                                       color:
                                                                           maincolor,
@@ -658,28 +607,13 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                                   width: 8),
                                                               MainButton(
                                                                   title:
-                                                                      'Dirty Oil',
-                                                                  color:
-                                                                      pinkColor,
+                                                                      'Filters for Oil',
+                                                                  color: blue,
                                                                   color1: white,
                                                                   buttonWidth:
-                                                                      0.25,
+                                                                      0.32,
                                                                   onPressed:
-                                                                      () {}),
-                                                              SizedBox(
-                                                                  width: 8),
-                                                              Text(
-                                                                  'properly identified as',
-                                                                  style: TextStyle(
-                                                                      color:
-                                                                          maincolor,
-                                                                      fontSize:
-                                                                          16,
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600))
+                                                                      () {})
                                                             ]),
                                                             Padding(
                                                                 padding:
@@ -688,15 +622,25 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                                         top: 8),
                                                                 child: Row(
                                                                     children: [
+                                                                      Text(
+                                                                          'enable the substitution for',
+                                                                          style: TextStyle(
+                                                                              color: maincolor,
+                                                                              fontSize: 16,
+                                                                              fontFamily: 'Roboto',
+                                                                              fontWeight: FontWeight.w600)),
+                                                                      SizedBox(
+                                                                          width:
+                                                                              8),
                                                                       MainButton(
                                                                           title:
-                                                                              'Dirty Oil Problem',
+                                                                              'Dirty Oil',
                                                                           color:
                                                                               pinkColor,
                                                                           color1:
                                                                               white,
                                                                           buttonWidth:
-                                                                              0.42,
+                                                                              0.26,
                                                                           onPressed:
                                                                               () {}),
                                                                       SizedBox(
@@ -727,15 +671,13 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                                       0.88,
                                                                   onPressed:
                                                                       () {
-                                                                    _pageController
-                                                                        .animateToPage(
-                                                                      2,
-                                                                      duration: Duration(
-                                                                          milliseconds:
-                                                                              400),
-                                                                      curve: Curves
-                                                                          .easeInOut,
-                                                                    );
+                                                                    _pageController.animateToPage(
+                                                                        2,
+                                                                        duration: Duration(
+                                                                            milliseconds:
+                                                                                400),
+                                                                        curve: Curves
+                                                                            .easeInOut);
                                                                   }))
                                                         ])),
                                                     Positioned(
@@ -753,13 +695,12 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                                 currentPage
                                                                     .toStringAsFixed(
                                                                         0)),
-                                                            decorator:
-                                                                DotsDecorator(
-                                                              color: Color(
-                                                                  4291680496),
-                                                              activeColor:
-                                                                  Colors.pink,
-                                                            )))
+                                                            decorator: DotsDecorator(
+                                                                color: Color(
+                                                                    4291680496),
+                                                                activeColor:
+                                                                    Colors
+                                                                        .pink)))
                                                   ]))
                                             ]))))
                                   ])
@@ -789,7 +730,7 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                       child: Text.rich(
                                                           TextSpan(children: [
                                                     TextSpan(
-                                                        text: 'Manual Enter',
+                                                        text: 'Automatic Enter',
                                                         style: TextStyle(
                                                             color: Colors.white,
                                                             fontSize: 26,
@@ -887,17 +828,21 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                                               .center,
                                                                       children: [
                                                                         Padding(
-                                                                            padding:
-                                                                                const EdgeInsets.only(top: 30),
-                                                                            child: Container(
-                                                                                child: RichText(
-                                                                                    text: TextSpan(children: [
-                                                                              TextSpan(text: 'Is ', style: TextStyle(color: maincolor, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.w600)),
+                                                                          padding: const EdgeInsets
+                                                                              .only(
+                                                                              top: 30),
+                                                                          child: Container(
+                                                                              child: RichText(
+                                                                                  text: TextSpan(
+                                                                            children: [
+                                                                              TextSpan(text: 'Does ', style: TextStyle(color: maincolor, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.w600)),
+                                                                              TextSpan(text: 'Filters for Oil', style: TextStyle(color: blue, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.w600)),
+                                                                              TextSpan(text: '\nenable the substitution for \n', style: TextStyle(color: maincolor, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.w600)),
                                                                               TextSpan(text: 'Dirty Oil', style: TextStyle(color: pinkColor, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.w600)),
-                                                                              TextSpan(text: '\nproperly identified as \n', style: TextStyle(color: maincolor, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.w600)),
-                                                                              TextSpan(text: 'Dirty Oil Problem', style: TextStyle(color: pinkColor, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.w600)),
-                                                                              TextSpan(text: ' ?', style: TextStyle(color: maincolor, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.w600))
-                                                                            ]))))
+                                                                              TextSpan(text: ' ?', style: TextStyle(color: maincolor, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.w600)),
+                                                                            ],
+                                                                          ))),
+                                                                        )
                                                                       ])),
                                                               Padding(
                                                                   padding:
@@ -922,7 +867,7 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                                           onPressed:
                                                                               () {
                                                                             Navigator.push(context,
-                                                                                MaterialPageRoute(builder: (context) => ReadModeView1()));
+                                                                                MaterialPageRoute(builder: (context) => PollEntityQuestionView()));
                                                                           },
                                                                           color:
                                                                               violet,
@@ -932,17 +877,16 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                                               10,
                                                                         ),
                                                                         MainButton(
-                                                                          title:
-                                                                              'No',
-                                                                          color1:
-                                                                              maincolor,
-                                                                          buttonWidth:
-                                                                              0.38,
-                                                                          onPressed:
-                                                                              () {},
-                                                                          color:
-                                                                              violet,
-                                                                        )
+                                                                            title:
+                                                                                'No',
+                                                                            color1:
+                                                                                maincolor,
+                                                                            buttonWidth:
+                                                                                0.38,
+                                                                            onPressed:
+                                                                                () {},
+                                                                            color:
+                                                                                violet)
                                                                       ]))
                                                             ]))),
                                                     Padding(
