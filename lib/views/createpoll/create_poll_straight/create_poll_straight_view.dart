@@ -111,8 +111,10 @@ class _CreatePollStraightViewState extends State<CreatePollStraightView> {
                                   const EdgeInsets.only(top: 40, bottom: 8),
                               child: CustomDivider(
                                 name: 'Poll name',
-                                startingwidth: 8,
-                                endingwidth: 275,
+                                startingwidth:
+                                    MediaQuery.of(context).size.width * 0.02,
+                                endingwidth:
+                                    MediaQuery.of(context).size.width * 0.66,
                               ),
                             ),
                             TextField(
@@ -140,8 +142,12 @@ class _CreatePollStraightViewState extends State<CreatePollStraightView> {
                                 children: [
                                   CustomDivider(
                                     name: 'Visibility',
-                                    startingwidth: 8,
-                                    endingwidth: 285,
+                                    startingwidth:
+                                        MediaQuery.of(context).size.width *
+                                            0.02,
+                                    endingwidth:
+                                        MediaQuery.of(context).size.width *
+                                            0.68,
                                   ),
                                   Row(
                                     children: [
@@ -215,10 +221,16 @@ class _CreatePollStraightViewState extends State<CreatePollStraightView> {
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         CustomDivider(
-                                          name: 'Location',
-                                          startingwidth: 8,
-                                          endingwidth: 285,
-                                        ),
+                                            name: 'Location',
+                                            startingwidth:
+                                                MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.02,
+                                            endingwidth: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.68),
                                       ],
                                     ),
                                   ),
@@ -405,10 +417,13 @@ class _CreatePollStraightViewState extends State<CreatePollStraightView> {
                                 Column(
                                   children: [
                                     CustomDivider(
-                                      name: 'Start date',
-                                      startingwidth: 8,
-                                      endingwidth: 90,
-                                    ),
+                                        name: 'Start date',
+                                        startingwidth:
+                                            MediaQuery.of(context).size.width *
+                                                0.02,
+                                        endingwidth:
+                                            MediaQuery.of(context).size.width *
+                                                0.22),
                                     Padding(
                                       padding: const EdgeInsets.only(top: 14),
                                       child: Container(
@@ -446,10 +461,13 @@ class _CreatePollStraightViewState extends State<CreatePollStraightView> {
                                 Column(
                                   children: [
                                     CustomDivider(
-                                      name: 'End date',
-                                      startingwidth: 8,
-                                      endingwidth: 90,
-                                    ),
+                                        name: 'End date',
+                                        startingwidth:
+                                            MediaQuery.of(context).size.width *
+                                                0.02,
+                                        endingwidth:
+                                            MediaQuery.of(context).size.width *
+                                                0.22),
                                     Padding(
                                       padding: const EdgeInsets.only(top: 14),
                                       child: Container(
@@ -488,8 +506,10 @@ class _CreatePollStraightViewState extends State<CreatePollStraightView> {
                                   const EdgeInsets.only(top: 14, bottom: 14),
                               child: CustomDivider(
                                 name: 'Number of participants',
-                                startingwidth: 8,
-                                endingwidth: 190,
+                                startingwidth:
+                                    MediaQuery.of(context).size.width * 0.02,
+                                endingwidth:
+                                    MediaQuery.of(context).size.width * 0.47,
                               ),
                             ),
                             Container(
@@ -546,8 +566,10 @@ class _CreatePollStraightViewState extends State<CreatePollStraightView> {
                                   const EdgeInsets.only(top: 14, bottom: 14),
                               child: CustomDivider(
                                 name: 'Entity in Question',
-                                startingwidth: 8,
-                                endingwidth: 225,
+                                startingwidth:
+                                    MediaQuery.of(context).size.width * 0.02,
+                                endingwidth:
+                                    MediaQuery.of(context).size.width * 0.55,
                               ),
                             ),
                             Row(

@@ -5,8 +5,8 @@ import 'package:speak_logic_poll/components/button.dart';
 import 'package:speak_logic_poll/components/custom_checkbox.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
-import 'package:speak_logic_poll/views/createpoll/poll_entity_question/poll_entity_question_view.dart';
 import 'package:speak_logic_poll/views/createpoll/read_mode1/read_mode_view1.dart';
+import 'package:speak_logic_poll/views/createpoll/read_mode6/read_mode_view6.dart';
 
 class ManualEnterView extends StatefulWidget {
   @override
@@ -414,24 +414,19 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                                           fontWeight:
                                                                               FontWeight.w600))
                                                                 ])))),
-                                                Padding(
-                                                    padding:
-                                                        const EdgeInsets.only(
-                                                            top: 165,
-                                                            bottom: 20),
-                                                    child: MainButton(
-                                                        title: 'Next Step',
-                                                        color: pinkColor,
-                                                        color1: white,
-                                                        onPressed: () {
-                                                          _pageController.animateToPage(
-                                                              1,
+                                                MainButton(
+                                                    title: 'Next Step',
+                                                    color: pinkColor,
+                                                    color1: white,
+                                                    onPressed: () {
+                                                      _pageController
+                                                          .animateToPage(1,
                                                               duration: Duration(
                                                                   milliseconds:
-                                                                      100),
+                                                                      400),
                                                               curve: Curves
                                                                   .easeInOut);
-                                                        })),
+                                                    }),
                                                 Positioned(
                                                     bottom: 20.0,
                                                     left: 0.0,
@@ -795,8 +790,8 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                             children: [
                                                           Visibility(
                                                             visible:
-                                                                isProblemVisible &&
-                                                                    !isSolutionVisible,
+                                                                isCheckBoxChecked1 &&
+                                                                    !isCheckBoxChecked2,
                                                             child: Column(
                                                                 children: [
                                                                   Row(
@@ -854,8 +849,8 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                           ),
                                                           Visibility(
                                                             visible:
-                                                                isSolutionVisible &&
-                                                                    !isSolutionFunctionVisible,
+                                                                isCheckBoxChecked2 &&
+                                                                    !isCheckBoxChecked3,
                                                             child: Padding(
                                                               padding:
                                                                   const EdgeInsets
@@ -913,7 +908,7 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                           ),
                                                           Visibility(
                                                             visible:
-                                                                isSolutionFunctionVisible,
+                                                                isCheckBoxChecked3,
                                                             child: Column(
                                                               children: [
                                                                 Padding(
@@ -1211,11 +1206,13 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                                 thickness: 2))
                                                       ])),
                                               Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          top: 30),
-                                                  child: Column(children: [
-                                                    Container(
+                                                padding: const EdgeInsets.only(
+                                                    top: 30),
+                                                child: Column(children: [
+                                                  Visibility(
+                                                    visible: isProblemVisible &&
+                                                        !isSolutionVisible,
+                                                    child: Container(
                                                         decoration: BoxDecoration(
                                                             color: lightGrey,
                                                             borderRadius:
@@ -1292,46 +1289,282 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                                         )
                                                                       ]))
                                                             ]))),
-                                                    Padding(
+                                                  ),
+                                                  Visibility(
+                                                    visible: isProblemVisible &&
+                                                        isSolutionVisible,
+                                                    child: Padding(
                                                         padding:
                                                             const EdgeInsets
-                                                                .only(
-                                                                top: 157,
-                                                                bottom: 20),
-                                                        child: MainButton(
-                                                            title: 'Save Poll',
-                                                            color1: white,
-                                                            onPressed: () {
-                                                              Navigator.push(
-                                                                  context,
-                                                                  MaterialPageRoute(
-                                                                      builder:
-                                                                          (context) =>
-                                                                              ReadModeView1()));
-                                                            },
-                                                            color: pinkColor)),
-                                                    Positioned(
-                                                        bottom: 20.0,
-                                                        left: 0.0,
-                                                        right: 0.0,
-                                                        child: DotsIndicator(
-                                                            onTap: (position) {
-                                                              _pageController
-                                                                  .jumpToPage(
-                                                                      position);
-                                                            },
-                                                            dotsCount: 3,
-                                                            position: int.parse(
-                                                                currentPage
-                                                                    .toStringAsFixed(
-                                                                        0)),
-                                                            decorator: DotsDecorator(
-                                                                color: Color(
-                                                                    4291680496),
-                                                                activeColor:
-                                                                    Colors
-                                                                        .pink)))
-                                                  ]))
+                                                                .only(top: 8),
+                                                        child: Container(
+                                                            decoration: BoxDecoration(
+                                                                color:
+                                                                    lightGrey,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            20)),
+                                                            child: Container(
+                                                                width: MediaQuery.of(
+                                                                        context)
+                                                                    .size
+                                                                    .width,
+                                                                child: Column(
+                                                                    children: [
+                                                                      Padding(
+                                                                          padding:
+                                                                              const EdgeInsets.only(
+                                                                            top:
+                                                                                20,
+                                                                          ),
+                                                                          child: Container(
+                                                                              child: Column(
+                                                                            children: [
+                                                                              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                                                                                Text('Does', style: TextStyle(color: maincolor, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.w600)),
+                                                                                Text(' Solution name', style: TextStyle(color: blue, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.w600)),
+                                                                              ]),
+                                                                              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                                                                                Text('enable the substitution for ', style: TextStyle(color: maincolor, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.w600)),
+                                                                              ]),
+                                                                              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                                                                                Text('Problem name', style: TextStyle(color: pinkColor, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.w600)),
+                                                                                Text(' ?', style: TextStyle(color: maincolor, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.w600)),
+                                                                              ])
+                                                                            ],
+                                                                          ))),
+                                                                      Padding(
+                                                                        padding: const EdgeInsets
+                                                                            .only(
+                                                                            top:
+                                                                                50,
+                                                                            bottom:
+                                                                                20),
+                                                                        child:
+                                                                            Row(
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.center,
+                                                                          children: [
+                                                                            MainButton(
+                                                                              title: 'Yes',
+                                                                              color1: white,
+                                                                              buttonWidth: 0.38,
+                                                                              onPressed: () {},
+                                                                              color: maincolor,
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 10,
+                                                                            ),
+                                                                            MainButton(
+                                                                              title: 'No',
+                                                                              color1: maincolor,
+                                                                              buttonWidth: 0.38,
+                                                                              onPressed: () {},
+                                                                              color: violet,
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ])))),
+                                                  ),
+                                                  Visibility(
+                                                      visible:
+                                                          isSolutionFunctionVisible,
+                                                      child: Column(children: [
+                                                        Padding(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                    .only(
+                                                                    top: 8),
+                                                            child: Row(
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  Padding(
+                                                                    padding: const EdgeInsets
+                                                                        .only(
+                                                                        top:
+                                                                            50),
+                                                                    child:
+                                                                        Container(
+                                                                      width:
+                                                                          200,
+                                                                      height:
+                                                                          90,
+                                                                      child: RichText(
+                                                                          text: TextSpan(children: [
+                                                                        TextSpan(
+                                                                            text:
+                                                                                'Is ',
+                                                                            style:
+                                                                                TextStyle(
+                                                                              color: maincolor,
+                                                                              fontSize: 20,
+                                                                              fontFamily: 'Roboto',
+                                                                              fontWeight: FontWeight.w600,
+                                                                            )),
+                                                                        TextSpan(
+                                                                          text:
+                                                                              'Dirty Oil',
+                                                                          style:
+                                                                              TextStyle(
+                                                                            color:
+                                                                                pinkColor,
+                                                                            fontSize:
+                                                                                20,
+                                                                            fontFamily:
+                                                                                'Roboto',
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                          ),
+                                                                        ),
+                                                                        TextSpan(
+                                                                            text:
+                                                                                '\nproperly identified as \n',
+                                                                            style:
+                                                                                TextStyle(
+                                                                              color: maincolor,
+                                                                              fontSize: 20,
+                                                                              fontFamily: 'Roboto',
+                                                                              fontWeight: FontWeight.w600,
+                                                                            )),
+                                                                        TextSpan(
+                                                                          text:
+                                                                              'Dirty Oil Problem',
+                                                                          style:
+                                                                              TextStyle(
+                                                                            color:
+                                                                                pinkColor,
+                                                                            fontSize:
+                                                                                20,
+                                                                            fontFamily:
+                                                                                'Roboto',
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                          ),
+                                                                        ),
+                                                                        TextSpan(
+                                                                            text:
+                                                                                ' ?',
+                                                                            style:
+                                                                                TextStyle(
+                                                                              color: maincolor,
+                                                                              fontSize: 20,
+                                                                              fontFamily: 'Roboto',
+                                                                              fontWeight: FontWeight.w600,
+                                                                            ))
+                                                                      ])),
+                                                                    ),
+                                                                  ),
+                                                                ])),
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .only(
+                                                                  top: 100),
+                                                          child: Row(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              MainButton(
+                                                                title: 'Yes',
+                                                                color1:
+                                                                    maincolor,
+                                                                buttonWidth:
+                                                                    0.38,
+                                                                onPressed:
+                                                                    () {},
+                                                                color: violet,
+                                                              ),
+                                                              SizedBox(
+                                                                width: 10,
+                                                              ),
+                                                              MainButton(
+                                                                title: 'No',
+                                                                color1:
+                                                                    maincolor,
+                                                                buttonWidth:
+                                                                    0.38,
+                                                                onPressed:
+                                                                    () {},
+                                                                color: violet,
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ]))
+                                                ]),
+                                              ),
+                                              Visibility(
+                                                visible: isCheckBoxChecked1,
+                                                child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            top: 157,
+                                                            bottom: 20),
+                                                    child: MainButton(
+                                                        title: 'Save Poll',
+                                                        color1: white,
+                                                        onPressed: () {
+                                                          Navigator.push(
+                                                              context,
+                                                              MaterialPageRoute(
+                                                                  builder: (context) =>
+                                                                      Visibility(
+                                                                          visible:
+                                                                              isCheckBoxChecked1,
+                                                                          child:
+                                                                              ReadModeView1())));
+                                                        },
+                                                        color: pinkColor)),
+                                              ),
+                                              Visibility(
+                                                visible: isCheckBoxChecked1 &&
+                                                    !isCheckBoxChecked2,
+                                                child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            top: 157,
+                                                            bottom: 20),
+                                                    child: MainButton(
+                                                        title: 'Save Poll',
+                                                        color1: white,
+                                                        onPressed: () {
+                                                          Navigator.push(
+                                                              context,
+                                                              MaterialPageRoute(
+                                                                  builder: (context) => Visibility(
+                                                                      visible:
+                                                                          isProblemVisible &&
+                                                                              isSolutionVisible,
+                                                                      child:
+                                                                          ReadModeView6())));
+                                                        },
+                                                        color: pinkColor)),
+                                              ),
+                                              Positioned(
+                                                  bottom: 20.0,
+                                                  left: 0.0,
+                                                  right: 0.0,
+                                                  child: DotsIndicator(
+                                                      onTap: (position) {
+                                                        _pageController
+                                                            .jumpToPage(
+                                                                position);
+                                                      },
+                                                      dotsCount: 3,
+                                                      position: int.parse(
+                                                          currentPage
+                                                              .toStringAsFixed(
+                                                                  0)),
+                                                      decorator: DotsDecorator(
+                                                          color:
+                                                              Color(4291680496),
+                                                          activeColor:
+                                                              Colors.pink)))
                                             ]))))
                                   ])
                                 ]);
