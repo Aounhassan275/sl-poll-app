@@ -20,3 +20,4 @@ const lightGrey = Color(4293783023);
 const purple1 = Color(4283908795);
 const green = Color(4281386401);
 const Grey = Color(0xFFC2C4C6);
+const lightpurple = Color(0xFFA6A0F0);
