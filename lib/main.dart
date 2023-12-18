@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:speak_logic_poll/routes/app_pages.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/themes/themes.dart';
+import 'package:speak_logic_poll/views/Invitations/Send_Receive_Invitation/Send_Receive_Invitation_Binding.dart';
+import 'package:speak_logic_poll/views/Invitations/Send_Receive_Invitation/Send_Receive_Invitation_View.dart';
 import 'package:speak_logic_poll/views/auth/forgot/forgot_binding.dart';
 import 'package:speak_logic_poll/views/auth/forgot/forgot_view.dart';
 import 'package:speak_logic_poll/views/auth/polls/polls_view.dart';
@@ -42,8 +44,8 @@ class MyApp extends StatelessWidget {
       theme: Styles.lightTheme,
       debugShowCheckedModeBanner: false,
       title: "Fl Speak Logic Poll",
-      initialBinding: SignupBinding(),
-      home: SignUpView(),
+      initialBinding: SendReceiveInvitationBinding(),
+      home: SendReceiveInvitation(),
       getPages: AppPages.pages,
     );
   }

@@ -1,7 +1,9 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
+import 'package:speak_logic_poll/views/Invitations/Create_New_Invitations/create_Invitations_view.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 import 'package:image_stack/image_stack.dart';
 
@@ -25,6 +27,7 @@ class _SendReceiveInvitationState extends State<SendReceiveInvitation> {
   String _selectedValue = 'All';
   bool isChecked = false;
   bool _isSendTab = true;
+  bool _isReceiveTab = false;
   int initialLabelIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -39,30 +42,38 @@ class _SendReceiveInvitationState extends State<SendReceiveInvitation> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          color: lightGrey,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                            top: 10, bottom: 10, right: 20, left: 10),
-                        child: Row(
-                          children: [
-                            SvgPicture.asset('assets/images/addfriend.svg'),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 10, right: 10),
-                              child: Text(
-                                'New Invitation',
-                                style: TextStyle(
-                                    fontFamily: 'Roboto',
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                    color: maincolor),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CreateNewInvitation()));
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: lightGrey,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              top: 10, bottom: 10, right: 20, left: 10),
+                          child: Row(
+                            children: [
+                              SvgPicture.asset('assets/images/addfriend.svg'),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 10),
+                                child: Text(
+                                  'New Invitation',
+                                  style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      color: maincolor),
+                                ),
                               ),
-                            ),
-                            SvgPicture.asset('assets/images/plus.svg'),
-                          ],
+                              SvgPicture.asset('assets/images/plus.svg'),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -99,11 +110,14 @@ class _SendReceiveInvitationState extends State<SendReceiveInvitation> {
                     switch (index) {
                       case 0:
                         _isSendTab = true;
+                        _isReceiveTab = false;
                       case 1:
                         _isSendTab = false;
+                        _isReceiveTab = true;
                         break;
                       default:
                         _isSendTab = true;
+                        _isReceiveTab = false;
                     }
 
                     setState(() {
@@ -195,7 +209,7 @@ class _SendReceiveInvitationState extends State<SendReceiveInvitation> {
                   )
                 ],
               ),
-              //----------------send tab #1 with single user----------------------
+              //----------------send card #1 with single user----------------------
               Visibility(
                 visible: _isSendTab,
                 child: Padding(
@@ -665,7 +679,7 @@ class _SendReceiveInvitationState extends State<SendReceiveInvitation> {
                 ),
               ),
 
-              //----------------- 2nd card with multiple send to users-----------------
+              //-----------------send card #2 with multiple send to users-----------------
               Visibility(
                 visible: _isSendTab,
                 child: Padding(
@@ -1317,6 +1331,874 @@ class _SendReceiveInvitationState extends State<SendReceiveInvitation> {
                                   ],
                                 )),
                           ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              //-----------------Receive card #1 -----------------------
+              Visibility(
+                visible: _isReceiveTab,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: maincolor,
+                              spreadRadius: -0.5,
+                              offset: Offset(-3, 0))
+                        ],
+                        color: lightGrey,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          left: 16, right: 16, top: 16, bottom: 12),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                children: [
+                                  Text(
+                                    'Abcd Poll',
+                                    style: TextStyle(
+                                        fontFamily: 'Roboto',
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w700,
+                                        color: maincolor),
+                                  )
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 6),
+                                        child: SvgPicture.asset(
+                                            'assets/images/calendar-days-red.svg'),
+                                      ),
+                                      Text(
+                                        '28.10.23 - 30.10.23',
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w400,
+                                            color: maincolor),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 6),
+                                        child: SvgPicture.asset(
+                                            'assets/images/map-pin.svg'),
+                                      ),
+                                      Text(
+                                        'USA',
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w400,
+                                            color: maincolor),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Row(
+                              children: [
+                                SvgPicture.asset(
+                                    'assets/images/users-purple.svg'),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10, right: 10),
+                                  child: Text(
+                                    '120',
+                                    style: TextStyle(
+                                        fontFamily: 'Roboto',
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w600,
+                                        color: maincolor),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 10),
+                                  child: SvgPicture.asset(
+                                      'assets/images/eyeoff.svg'),
+                                ),
+                                Text(
+                                  'Private',
+                                  style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600,
+                                      color: maincolor),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10, bottom: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Send to:',
+                                  style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w400,
+                                      color: lightpurple),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                width: 40,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                    color: lightpurple,
+                                    borderRadius: BorderRadius.circular(100)),
+                                child: Center(
+                                  child: Text(
+                                    'JS',
+                                    style: TextStyle(
+                                        fontFamily: 'Roboto',
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 5, right: 5),
+                                child: Text(
+                                  'Jane Smith',
+                                  style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600,
+                                      color: maincolor),
+                                ),
+                              ),
+                              Text(
+                                '|',
+                                style: TextStyle(
+                                    fontFamily: 'Roboto',
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: maincolor),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 5, right: 30),
+                                child: Text(
+                                  'New York, Buffalo',
+                                  style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600,
+                                      color: maincolor),
+                                ),
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: green,
+                                    borderRadius: BorderRadius.circular(50)),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5, bottom: 5, right: 10, left: 10),
+                                  child: Text(
+                                    'Accepted',
+                                    style: TextStyle(
+                                        fontFamily: 'Roboto',
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                          //---------------------------ExpandablePanel started-------------------
+                          Padding(
+                            padding: const EdgeInsets.only(top: 12),
+                            child: ExpandablePanel(
+                                collapsed: ExpandableButton(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: lightpurple,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 13, bottom: 13),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            'More info',
+                                            style: TextStyle(
+                                                fontFamily: 'Roboto',
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.white),
+                                          ),
+                                          SvgPicture.asset(
+                                              'assets/images/chevron-down-white.svg'),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                expanded: Column(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 10),
+                                      child: ExpandableButton(
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: lightpurple,
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: 13, bottom: 13),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  'Less info',
+                                                  style: TextStyle(
+                                                      fontFamily: 'Roboto',
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      color: Colors.white),
+                                                ),
+                                                SvgPicture.asset(
+                                                    'assets/images/chevron-up-white.svg'),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          'Entity in Question:',
+                                          style: TextStyle(
+                                              fontFamily: 'Roboto',
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w400,
+                                              color: textcolor),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 5, bottom: 12),
+                                      child: Row(
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(right: 5),
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                color: pinkColor,
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    top: 5,
+                                                    bottom: 5,
+                                                    left: 10,
+                                                    right: 10),
+                                                child: Text(
+                                                  'Problem',
+                                                  style: TextStyle(
+                                                      fontFamily: 'Roboto',
+                                                      fontSize: 10,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      color: Colors.white),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 10),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(20)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(10),
+                                          child: Column(
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  RichText(
+                                                      text: TextSpan(
+                                                          style: TextStyle(
+                                                              fontFamily:
+                                                                  'Roboto',
+                                                              fontSize: 15,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              color: maincolor),
+                                                          children: <TextSpan>[
+                                                        TextSpan(text: 'Is '),
+                                                        TextSpan(
+                                                            text: 'Dirty Oil ',
+                                                            style: TextStyle(
+                                                                color:
+                                                                    pinkColor)),
+                                                        TextSpan(
+                                                            text:
+                                                                'properly identified as')
+                                                      ]))
+                                                ],
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    top: 6),
+                                                child: Row(
+                                                  children: [
+                                                    RichText(
+                                                        text: TextSpan(
+                                                            style: TextStyle(
+                                                                fontFamily:
+                                                                    'Roboto',
+                                                                fontSize: 15,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                color:
+                                                                    pinkColor),
+                                                            children: <TextSpan>[
+                                                          TextSpan(
+                                                              text:
+                                                                  'Dirty Oil Problem '),
+                                                          TextSpan(
+                                                              text: '?',
+                                                              style: TextStyle(
+                                                                  color:
+                                                                      maincolor))
+                                                        ]))
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(right: 10),
+                                          child: Container(
+                                            height: 25,
+                                            width: 35,
+                                            decoration: BoxDecoration(
+                                                color: green,
+                                                borderRadius:
+                                                    BorderRadius.circular(10)),
+                                            child: Center(
+                                              child: Text(
+                                                'YES',
+                                                style: TextStyle(
+                                                    fontFamily: 'Roboto',
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: Colors.white),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        RichText(
+                                            text: TextSpan(
+                                                style: TextStyle(
+                                                    fontFamily: 'Roboto',
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: maincolor),
+                                                children: <TextSpan>[
+                                              TextSpan(
+                                                  text: 'Dirty Oil ',
+                                                  style: TextStyle(
+                                                      color: pinkColor)),
+                                              TextSpan(
+                                                  text: 'identified properly'),
+                                            ]))
+                                      ],
+                                    ),
+                                  ],
+                                )),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              //-----------------Receive card #2 (pending response) -----------------------
+              Visibility(
+                visible: _isReceiveTab,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: green,
+                              spreadRadius: -0.5,
+                              offset: Offset(-3, 0))
+                        ],
+                        color: lightGrey,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          left: 16, right: 16, top: 16, bottom: 12),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                children: [
+                                  Text(
+                                    'Abcd Poll',
+                                    style: TextStyle(
+                                        fontFamily: 'Roboto',
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w700,
+                                        color: maincolor),
+                                  )
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 6),
+                                        child: SvgPicture.asset(
+                                            'assets/images/calendar-days-red.svg'),
+                                      ),
+                                      Text(
+                                        '28.10.23 - 30.10.23',
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w400,
+                                            color: maincolor),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 6),
+                                        child: SvgPicture.asset(
+                                            'assets/images/map-pin.svg'),
+                                      ),
+                                      Text(
+                                        'USA',
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w400,
+                                            color: maincolor),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Row(
+                              children: [
+                                SvgPicture.asset(
+                                    'assets/images/users-purple.svg'),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10, right: 10),
+                                  child: Text(
+                                    '120',
+                                    style: TextStyle(
+                                        fontFamily: 'Roboto',
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w600,
+                                        color: maincolor),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 10),
+                                  child: SvgPicture.asset(
+                                      'assets/images/eyeoff.svg'),
+                                ),
+                                Text(
+                                  'Private',
+                                  style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600,
+                                      color: maincolor),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10, bottom: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Send to:',
+                                  style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w400,
+                                      color: lightpurple),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                width: 40,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                    color: lightpurple,
+                                    borderRadius: BorderRadius.circular(100)),
+                                child: Center(
+                                  child: Text(
+                                    'JS',
+                                    style: TextStyle(
+                                        fontFamily: 'Roboto',
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 5, right: 5),
+                                child: Text(
+                                  'Jane Smith',
+                                  style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600,
+                                      color: maincolor),
+                                ),
+                              ),
+                              Text(
+                                '|',
+                                style: TextStyle(
+                                    fontFamily: 'Roboto',
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: maincolor),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 5, right: 30),
+                                child: Text(
+                                  'New York, Buffalo',
+                                  style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600,
+                                      color: maincolor),
+                                ),
+                              ),
+                            ],
+                          ),
+                          //---------------------------ExpandablePanel started-------------------
+                          Padding(
+                            padding: const EdgeInsets.only(top: 12),
+                            child: ExpandablePanel(
+                                collapsed: ExpandableButton(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: lightpurple,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 13, bottom: 13),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            'More info',
+                                            style: TextStyle(
+                                                fontFamily: 'Roboto',
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.white),
+                                          ),
+                                          SvgPicture.asset(
+                                              'assets/images/chevron-down-white.svg'),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                expanded: Column(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 10),
+                                      child: ExpandableButton(
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: lightpurple,
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: 13, bottom: 13),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  'Less info',
+                                                  style: TextStyle(
+                                                      fontFamily: 'Roboto',
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      color: Colors.white),
+                                                ),
+                                                SvgPicture.asset(
+                                                    'assets/images/chevron-up-white.svg'),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          'Entity in Question:',
+                                          style: TextStyle(
+                                              fontFamily: 'Roboto',
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w400,
+                                              color: textcolor),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 5, bottom: 12),
+                                      child: Row(
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(right: 5),
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    pinkColor.withOpacity(0.6),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    top: 5,
+                                                    bottom: 5,
+                                                    left: 10,
+                                                    right: 10),
+                                                child: Text(
+                                                  'Problem',
+                                                  style: TextStyle(
+                                                      fontFamily: 'Roboto',
+                                                      fontSize: 10,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      color: Colors.white),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 10),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(20)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(10),
+                                          child: Column(
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  RichText(
+                                                      text: TextSpan(
+                                                          style: TextStyle(
+                                                              fontFamily:
+                                                                  'Roboto',
+                                                              fontSize: 15,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              color: maincolor),
+                                                          children: <TextSpan>[
+                                                        TextSpan(text: 'Is '),
+                                                        TextSpan(
+                                                            text: 'Dirty Oil ',
+                                                            style: TextStyle(
+                                                                color:
+                                                                    pinkColor)),
+                                                        TextSpan(
+                                                            text:
+                                                                'properly identified as')
+                                                      ]))
+                                                ],
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    top: 6),
+                                                child: Row(
+                                                  children: [
+                                                    RichText(
+                                                        text: TextSpan(
+                                                            style: TextStyle(
+                                                                fontFamily:
+                                                                    'Roboto',
+                                                                fontSize: 15,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                color:
+                                                                    pinkColor),
+                                                            children: <TextSpan>[
+                                                          TextSpan(
+                                                              text:
+                                                                  'Dirty Oil Problem '),
+                                                          TextSpan(
+                                                              text: '?',
+                                                              style: TextStyle(
+                                                                  color:
+                                                                      maincolor))
+                                                        ]))
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                )),
+                          ),
+                          Divider(
+                            color: Color(0xFF9BA6BE),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.4,
+                                  decoration: BoxDecoration(
+                                    color: green.withOpacity(0.6),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 10, bottom: 10),
+                                    child: Center(
+                                      child: Text(
+                                        'Accept',
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.4,
+                                  decoration: BoxDecoration(
+                                    color: pinkColor.withOpacity(0.6),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 10, bottom: 10),
+                                    child: Center(
+                                      child: Text(
+                                        'Decline',
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
                         ],
                       ),
                     ),
