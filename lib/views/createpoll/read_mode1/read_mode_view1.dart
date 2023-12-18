@@ -19,16 +19,25 @@ class _ReadModeView1State extends State<ReadModeView1> {
   bool isNoButtonSelected = false;
 
   bool isSelected1 = false;
-  bool isCheckBoxChecked1 = false;
-  bool ischecked1 = false;
-
   bool isSelected2 = false;
-  bool isCheckBoxChecked2 = false;
-  bool ischecked2 = false;
-
   bool isSelected3 = false;
-  bool isCheckBoxChecked3 = false;
-  bool ischecked3 = false;
+
+  @override
+  void initState() {
+    dynamic arguments = Get.arguments;
+    if (arguments == '1') {
+      isSelected1 = true;
+    } else if (arguments == '2') {
+      isSelected1 = true;
+      isSelected2 = true;
+    } else
+      () {
+        isSelected1 = true;
+        isSelected2 = true;
+        isSelected3 = true;
+      };
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +126,7 @@ class _ReadModeView1State extends State<ReadModeView1> {
                                                 MainAxisAlignment.center,
                                             children: [
                                               Text(
-                                                'Is',
+                                                'Is ',
                                                 style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: 20,
@@ -158,7 +167,7 @@ class _ReadModeView1State extends State<ReadModeView1> {
                                                 MainAxisAlignment.center,
                                             children: [
                                               Text(
-                                                'Dirty Oil Problem',
+                                                'Dirty Oil Problem ',
                                                 style: TextStyle(
                                                   color: pinkColor,
                                                   fontSize: 20,
@@ -203,16 +212,21 @@ class _ReadModeView1State extends State<ReadModeView1> {
                                           !isYesButtonSelected;
                                       isNoButtonSelected = false;
                                     });
-                                    if (isSelected1 &&
-                                        !isSelected2 &&
-                                        !isSelected3) {
-                                      Navigator.pushNamed(
-                                          context, AppRoutes.readmode3);
+
+                                    // Additional conditions for route selection
+                                    if (isSelected1 && isSelected2) {
+                                      Get.toNamed(AppRoutes.readmode1,
+                                          arguments: isSelected1
+                                              ? "1"
+                                              : isSelected2
+                                                  ? "2"
+                                                  : isSelected3
+                                                      ? "3"
+                                                      : isSelected1);
                                     } else {
                                       Navigator.pushNamed(
-                                          context, AppRoutes.readmode6);
+                                          context, AppRoutes.readmode3);
                                     }
-                                    ;
                                   },
                                 ),
                                 SizedBox(width: 10),
@@ -228,11 +242,10 @@ class _ReadModeView1State extends State<ReadModeView1> {
                                       isNoButtonSelected = !isNoButtonSelected;
                                       isYesButtonSelected = false;
                                     });
-                                    setState(() {
-                                      isYesButtonSelected =
-                                          !isYesButtonSelected;
-                                      isNoButtonSelected = false;
-                                    });
+
+                                    Get.to(AppRoutes.readmode5, arguments: []);
+                                    // Navigator.pushNamed(
+                                    //     context, AppRoutes.readmode5);
                                   },
                                 ),
                               ],

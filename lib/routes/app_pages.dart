@@ -190,6 +190,7 @@ class AppPages {
       page: () => ReadModeView9(),
       // binding: ReadModeBinding9(),
     ),
+    
     GetPage(
       name: AppRoutes.readmode11,
       page: () => ReadModeView11(),

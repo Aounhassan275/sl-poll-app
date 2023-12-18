@@ -30,13 +30,11 @@ class AppRoutes {
   static const manualenter9 = '/manualenter9';
   static const readmode1 = '/readmode1';
   static const readmode3 = '/readmode3';
-  static const readmode4 = '/readmode4';
   static const readmode5 = '/readmode5';
   static const readmode6 = '/readmode6';
   static const readmode7 = '/readmode7';
   static const readmode8 = '/readmode8';
   static const readmode9 = '/readmode9';
-  static const readmode10 = '/readmode10';
   static const readmode11 = '/readmode11';
   static const readmode12 = '/readmode12';
   static const readmode13 = '/readmode13';

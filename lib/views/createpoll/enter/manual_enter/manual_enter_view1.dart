@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:speak_logic_poll/components/button.dart';
 import 'package:speak_logic_poll/components/custom_checkbox.dart';
+import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
 import 'package:speak_logic_poll/views/createpoll/read_mode1/read_mode_view1.dart';
-import 'package:speak_logic_poll/views/createpoll/read_mode6/read_mode_view6.dart';
 
 class ManualEnterView extends StatefulWidget {
   @override
@@ -17,15 +19,12 @@ class _ManualEnterViewState extends State<ManualEnterView> {
   final PageController _pageController = PageController();
   double currentPage = 0;
   bool isSelected1 = false;
-  bool isCheckBoxChecked1 = false;
   bool ischecked1 = false;
 
   bool isSelected2 = false;
-  bool isCheckBoxChecked2 = false;
   bool ischecked2 = false;
 
   bool isSelected3 = false;
-  bool isCheckBoxChecked3 = false;
   bool ischecked3 = false;
 
   bool isProblemVisible = false;
@@ -203,8 +202,6 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                                 !ischecked1;
                                                             isSelected1 =
                                                                 !isSelected1;
-                                                            isCheckBoxChecked1 =
-                                                                isSelected1;
 
                                                             isProblemVisible =
                                                                 isSelected1;
@@ -280,8 +277,6 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                                 !ischecked2;
                                                             isSelected2 =
                                                                 !isSelected2;
-                                                            isCheckBoxChecked2 =
-                                                                isSelected2;
 
                                                             isSolutionVisible =
                                                                 isSelected2;
@@ -356,8 +351,6 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                                 !ischecked3;
                                                             isSelected3 =
                                                                 !isSelected3;
-                                                            isCheckBoxChecked3 =
-                                                                isSelected3;
 
                                                             isSolutionFunctionVisible =
                                                                 isSelected3;
@@ -790,8 +783,8 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                             children: [
                                                           Visibility(
                                                             visible:
-                                                                isCheckBoxChecked1 &&
-                                                                    !isCheckBoxChecked2,
+                                                                isSelected1 &&
+                                                                    !isSelected2,
                                                             child: Column(
                                                                 children: [
                                                                   Row(
@@ -849,8 +842,8 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                           ),
                                                           Visibility(
                                                             visible:
-                                                                isCheckBoxChecked2 &&
-                                                                    !isCheckBoxChecked3,
+                                                                isSelected2 &&
+                                                                    !isSelected3,
                                                             child: Padding(
                                                               padding:
                                                                   const EdgeInsets
@@ -908,7 +901,7 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                           ),
                                                           Visibility(
                                                             visible:
-                                                                isCheckBoxChecked3,
+                                                                isSelected3,
                                                             child: Column(
                                                               children: [
                                                                 Padding(
@@ -1450,14 +1443,16 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                           title: 'Save Poll',
                                                           color1: white,
                                                           onPressed: () {
-                                                            Navigator.push(
-                                                                context,
-                                                                MaterialPageRoute(
-                                                                    builder: (context) => Visibility(
-                                                                        visible:
-                                                                            isCheckBoxChecked1,
-                                                                        child:
-                                                                            ReadModeView1())));
+                                                            Get.toNamed(
+                                                                AppRoutes
+                                                                    .readmode1,
+                                                                arguments: isSelected1
+                                                                    ? "1"
+                                                                    : isSelected2
+                                                                        ? "2"
+                                                                        : isSelected3
+                                                                            ? "3"
+                                                                            : isSelected1);
                                                           },
                                                           color: pinkColor)),
                                                 ),
