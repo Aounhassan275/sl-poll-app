@@ -39,4 +39,9 @@ class AppRoutes {
   static const readmode12 = '/readmode12';
   static const readmode13 = '/readmode13';
   static const homescreen = '/homescreen';
+
+
+
+  
+
 }

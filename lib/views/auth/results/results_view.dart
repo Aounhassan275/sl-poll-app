@@ -22,14 +22,26 @@ class _ResultsViewState extends State<ResultsView> {
         padding: EdgeInsets.only(top: 20, left: 15, right: 15),
         child: Column(
           children: [
-            Topcontainer(
-              img1: 'assets/images/listfilter.svg',
-              img2: 'assets/images/server.svg',
-              img3: 'assets/images/maximize.svg',
-              img4: 'assets/images/search.svg',
-              img5: 'assets/images/Searchs.svg',
-              img6: 'assets/images/menu.svg',
-            ),
+            // Topcontainer(
+            //   screenName: 'ResultView',
+            //   showimg6: false,
+            //   showimg7: false,
+            //   showimg2second: false,
+            //   showimg3second: false,
+            //   showimg6second: true,
+            //   showimg5second: false,
+            //   img1: 'assets/images/listfilter.svg',
+            //   img2: 'assets/images/server.svg',
+            //   img3: 'assets/images/maximize.svg',
+            //   img4: 'assets/images/search.svg',
+            //   img5: 'assets/images/Searchs.svg',
+            //   img6: 'assets/images/menu.svg',
+            //   img7: 'assets/images/grid.svg',
+            //   img5second:'assets/images/Searchwhite.svg',
+            //   img2second: 'assets/images/serverblue.svg',
+            //   img3second: 'assets/images/maximizeblue.svg',
+            //   img6second: 'assets/images/menublue.svg',
+            // ),
             Padding(
               padding: EdgeInsets.only(top: 15, bottom: 5),
               child: ToggleSwitch(
