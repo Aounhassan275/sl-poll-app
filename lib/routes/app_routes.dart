@@ -42,4 +42,9 @@ class AppRoutes {
   static const readmode11 = '/readmode11';
   static const readmode12 = '/readmode12';
   static const readmode13 = '/readmode13';
+
+
+
+  
+
 }

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:speak_logic_poll/components/topcontainer.dart';
 import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/views/auth/forgot/forgot_binding.dart';
 import 'package:speak_logic_poll/views/auth/forgot/forgot_view.dart';
@@ -235,5 +236,6 @@ class AppPages {
       page: () => ReadModeView13(),
       // binding: ReadModeBinding13(),
     ),
+    
   ];
 }
