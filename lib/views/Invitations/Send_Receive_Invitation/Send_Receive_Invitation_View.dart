@@ -1,7 +1,6 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/views/Invitations/Create_New_Invitations/create_Invitations_view.dart';
 import 'package:toggle_switch/toggle_switch.dart';

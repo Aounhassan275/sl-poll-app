@@ -39,6 +39,7 @@ import 'package:speak_logic_poll/views/createpoll/read_mode7/read_mode_view7.dar
 
 import 'package:speak_logic_poll/views/createpoll/read_mode9/read_mode_view9.dart';
 import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
+import 'package:speak_logic_poll/views/home/home_screen_view.dart';
 import 'package:speak_logic_poll/views/splash/splash_binding.dart';
 import 'package:speak_logic_poll/views/splash/splash_view.dart';
 import 'package:speak_logic_poll/views/success/success_view.dart';
@@ -126,6 +127,11 @@ class AppPages {
       // binding: PollEntityQuestionBinding(),
     ),
     GetPage(
+      name: AppRoutes.homescreen,
+      page: () => HomeScreenView(),
+      // binding: HomeScreenBinding(),
+    ),
+    GetPage(
       name: AppRoutes.manualenter1,
       page: () => ManualEnterView(),
       // binding: ManualEnterBinding1(),
@@ -206,5 +212,6 @@ class AppPages {
       page: () => ReadModeView13(),
       // binding: ReadModeBinding13(),
     ),
+
   ];
 }
