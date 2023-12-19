@@ -152,7 +152,7 @@ class _ProfileViewState extends State<ProfileView> {
                             },
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 10),
+                            padding: const EdgeInsets.only(top: 10, left: 6),
                             child: Container(
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
@@ -168,7 +168,9 @@ class _ProfileViewState extends State<ProfileView> {
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
-                                  SizedBox(width: 143),
+                                  SizedBox(
+                                      width: MediaQuery.of(context).size.width *
+                                          0.328),
                                   PlatformSwitch(
                                     value: isProfilePrivate,
                                     onChanged: (value) {

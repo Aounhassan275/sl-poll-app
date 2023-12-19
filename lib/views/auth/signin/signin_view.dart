@@ -11,6 +11,7 @@ import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/utils/fontWeight.dart';
 import 'package:speak_logic_poll/views/auth/signin/signin_controller.dart';
+import 'package:speak_logic_poll/views/createpoll/home/home_screen/home_view.dart';
 
 class SignInView extends StatefulWidget {
   const SignInView({super.key});
@@ -125,17 +126,22 @@ class _SignInViewState extends State<SignInView> {
       bottomNavigationBar: Wrap(
         clipBehavior: Clip.antiAlias,
         children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            padding:
-                const EdgeInsets.only(right: 15, left: 15, top: 10, bottom: 20),
-            child: MainButton(
-              title: 'Login',
-              onPressed: () {
-                Get.toNamed(AppRoutes.home);
-              },
-              color: pinkColor,
-              color1: white,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomeView()),
+              );
+            },
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              padding: const EdgeInsets.only(
+                  right: 15, left: 15, top: 10, bottom: 20),
+              child: MainButton(
+                title: 'Login',
+                color: pinkColor,
+                color1: white,
+              ),
             ),
           ),
           Align(

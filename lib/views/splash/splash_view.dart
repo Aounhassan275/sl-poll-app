@@ -13,7 +13,7 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<SplashController>(
+    return GetBuilder<InvitationsController>(
       builder: (controller) => Scaffold(
         backgroundColor: white,
         body: SafeArea(
@@ -36,7 +36,6 @@ class SplashView extends StatelessWidget {
                 hint: 'Email',
                 type: TextInputType.emailAddress,
                 img: 'assets/images/user.svg',
-
               ),
               PasswordIconInputField(
                 hint: 'Password',

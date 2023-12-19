@@ -46,6 +46,9 @@ dependencies:
   csc_picker: ^0.2.7
   intl: ^0.18.1
   dots_indicator: ^3.0.0
+  image_stack: ^2.1.1
+  expandable: ^5.0.1
+  flutter_svg_provider: ^1.0.6
  
 
 dev_dependencies:
