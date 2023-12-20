@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
 
-class ManualEnterController7 extends GetxController {
-  static ManualEnterController7 instance = Get.find();
+class ManualEnterController4 extends GetxController {
+  static ManualEnterController4 instance = Get.find();
 }

@@ -1,37 +1,189 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-import 'package:speak_logic_poll/components/read_mode_static2.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:speak_logic_poll/components/button.dart';
+import 'package:speak_logic_poll/routes/app_pages.dart';
 import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 
-class ReadModeView3 extends StatefulWidget {
-  const ReadModeView3({super.key});
+class ReadModeView3 extends StatelessWidget {
+  const ReadModeView3({
+    super.key,
+  });
 
-  @override
-  State<ReadModeView3> createState() => _ReadModeView3State();
-}
-
-class _ReadModeView3State extends State<ReadModeView3> {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Get.toNamed(AppRoutes.pollentity);
-      },
-      child: ReadModeStatic2(
-          row1text1: 'Yes',
-          row1text2: ' Dirty Oil',
-          row1text2color: pinkColor,
-          row2text1: 'properly identified as',
-          row3text1: 'Dirty Oil Problem',
-          buttontext: 'Submit poll for approval',
-          Row4: false,
-          row4text1: 'Problem name',
-          row4text2: '',
-          row5text1: '',
-          row5text1color: blue,
-          route1: AppRoutes.pollentity),
-    );
+    return Scaffold(
+        backgroundColor: maincolor,
+        body: SafeArea(
+          child: Stack(
+            children: [
+              SvgPicture.asset(
+                'assets/images/preview_background.svg',
+                fit: BoxFit.fill,
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.99,
+              ),
+              Positioned(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 60, left: 25, right: 25, bottom: 40),
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.84,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(18, 225, 224, 224),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 40),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    width: 21,
+                                    child: Divider(
+                                      color: grey,
+                                      thickness: 2,
+                                    ),
+                                  ),
+                                  SizedBox(width: 10),
+                                  Text(
+                                    'POLL USER RESULT PREVIEW',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  SizedBox(width: 10),
+                                  Container(
+                                    width: 21,
+                                    child: Divider(
+                                      color: grey,
+                                      thickness: 2,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  right: 20, left: 20, bottom: 60),
+                              child: Column(
+                                children: [
+                                  Container(
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.44,
+                                      child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Container(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.22,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              child: Column(
+                                                children: [
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Text(
+                                                        'Yes ',
+                                                        style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 20,
+                                                          fontFamily: 'Roboto',
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                      ),
+                                                      Text(
+                                                        'Dirty Oil',
+                                                        style: TextStyle(
+                                                          color: pinkColor,
+                                                          fontSize: 20,
+                                                          fontFamily: 'Roboto',
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  SizedBox(height: 8),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Text(
+                                                        'properly identified as',
+                                                        style: TextStyle(
+                                                          color: white,
+                                                          fontSize: 20,
+                                                          fontFamily: 'Roboto',
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  SizedBox(height: 8),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Text(
+                                                        'Dirty Oil Problem',
+                                                        style: TextStyle(
+                                                          color: white,
+                                                          fontSize: 20,
+                                                          fontFamily: 'Roboto',
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            MainButton(
+                                              title: 'Submit poll for approval',
+                                              color: pinkColor,
+                                              buttonWidth: 0.75,
+                                              color1: white,
+                                              onPressed: () {
+                                                Navigator.pushNamed(context,
+                                                    AppRoutes.pollentity);
+                                              },
+                                            ),
+                                          ]))
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ));
   }
 }

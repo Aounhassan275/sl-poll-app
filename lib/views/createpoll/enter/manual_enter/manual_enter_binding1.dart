@@ -4,6 +4,6 @@ import 'package:speak_logic_poll/views/createpoll/enter/manual_enter/manual_ente
 class ManualEnterBinding1 extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => ManualEnterController7());
+    Get.lazyPut(() => ManualEnterController4());
   }
 }
