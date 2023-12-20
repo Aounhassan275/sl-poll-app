@@ -1,9 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:demoapp/all_doctors.dart';
-import 'package:demoapp/find_doctor.dart';
-import 'package:demoapp/welcomeDoctor.dart';
 import 'package:flutter/material.dart';
+import 'package:speak_logic_poll/views/Invitations/Send_Receive_Invitation/Send_Receive_Invitation_View.dart';
 
 class BottomNavbar extends StatefulWidget {
   const BottomNavbar({super.key});
@@ -15,7 +13,8 @@ class BottomNavbar extends StatefulWidget {
 class _BottomNavbarState extends State<BottomNavbar> {
   int _currentIndex = 0;
   final List<Widget> _screens = [
-   
+    SendReceiveInvitation(),
+    
   ];
 
   void _onItemTapped(int index) {
