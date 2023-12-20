@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
+import 'package:speak_logic_poll/views/Bottom_Navbar/Bottom_Navbar.dart';
 import 'package:speak_logic_poll/views/Invitations/Send_Receive_Invitation/Send_Receive_Invitation_View.dart';
 
 class SaveInvitation extends StatefulWidget {
@@ -116,8 +117,7 @@ class _SaveInvitationState extends State<SaveInvitation> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            SendReceiveInvitation()));
+                                        builder: (context) => BottomNavbar()));
                               },
                               child: Container(
                                 width: MediaQuery.of(context).size.width * 0.38,
