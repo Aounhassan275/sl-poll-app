@@ -76,6 +76,7 @@ class _TopcontainerState extends State<Topcontainer> {
   }
 
   bool isProblemSelected = false;
+  bool isProblemSelectedd = false;
   bool isAutomaticEnterSelected = false;
 
   @override
@@ -111,7 +112,7 @@ class _TopcontainerState extends State<Topcontainer> {
                           GestureDetector(
                             onTap: () {
                               setState(() {
-                                isProblemSelected = !isProblemSelected;
+                                //isProblemSelectedd = !isProblemSelectedd;
                                 // _navigationMenuIndex = 0;
                                 _onItemTapped(0);
                               });
@@ -121,11 +122,26 @@ class _TopcontainerState extends State<Topcontainer> {
                                 height: 30,
                                 width: 30,
                                 decoration: BoxDecoration(
-                                    color: grey.withOpacity(0.2),
+                                    color: isProblemSelectedd
+                                    ?maincolor
+                                    :grey.withOpacity(0.2),
                                     borderRadius: BorderRadius.circular(5)),
-                                child: SvgPicture.asset(
-                                  widget.img1,
-                                  fit: BoxFit.none,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    _onItemTapped(0);
+                                  },
+                                  child: SvgPicture.asset(
+                                    isProblemSelectedd
+                                            ? 'assets/images/listfilterwhite.svg'
+                                            : 'assets/images/listfilter.svg',
+                                    // widget.img1,
+                                    fit: BoxFit.none,
+
+                                    // isProblemSelected
+                                    //         ? 'assets/images/listfilterwhite.svg'
+                                    //         : 'assets/images/listfilter.svg',
+                                    //   listfilterwhite
+                                  ),
                                 )),
                           ),
                           // Visibility(
@@ -239,17 +255,34 @@ class _TopcontainerState extends State<Topcontainer> {
                           // : Text(''),
                           // widget.screenName == 'ResultView'
                           //     ?
+                          ///////////////////////////////////////////////////////////////////////////////Search///////////////////////////////
                           Container(
                               height: 32,
                               width: 32,
                               margin: EdgeInsets.only(right: 6),
                               decoration: BoxDecoration(
-                                  color: grey.withOpacity(0.2),
+                                  color: isProblemSelected
+                                      ? grey.withOpacity(0.2)
+                                      : maincolor,
                                   borderRadius: BorderRadius.circular(5)),
-                              child: SvgPicture.asset(
-                                widget.img5,
-                                fit: BoxFit.none,
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    isProblemSelected = !isProblemSelected;
+                                    _onItemTapped(2);
+                                  });
+                                },
+                                child: SvgPicture.asset(
+                                  isProblemSelected
+                                      // ? 'assets/images/Searchwhite.svg'
+                                      // : 'assets/images/Searchs.svg',
+                                      ? 'assets/images/Searchs.svg'
+                                      : 'assets/images/Searchwhite.svg',
+                                  fit: BoxFit.none,
+                                  // color:isProblemSelected?Colors.white : Colors.black ,
+                                ),
                               ))
+
                           // : Text(''),
                           // widget.img5second != ''
                           //     ? Visibility(
@@ -329,6 +362,7 @@ class _TopcontainerState extends State<Topcontainer> {
                 ),
               ),
               _selectedIndex == 0
+              
                   ? Container(
                       height: MediaQuery.of(context).size.height * 0.85,
                       // padding:

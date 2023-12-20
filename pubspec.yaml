@@ -49,6 +49,9 @@ dependencies:
   image_stack: ^2.1.1
   expandable: ^5.0.1
   flutter_svg_provider: ^1.0.6
+  material: ^1.0.0+2
+  gap: ^3.0.1
+  font_awesome_flutter: ^10.6.0
  
 
 dev_dependencies:
