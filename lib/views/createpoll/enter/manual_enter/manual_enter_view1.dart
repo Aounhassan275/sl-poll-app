@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:speak_logic_poll/components/button.dart';
 import 'package:speak_logic_poll/components/custom_checkbox.dart';
 import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
-import 'package:speak_logic_poll/views/createpoll/read_mode1/read_mode_view1.dart';
+import 'package:speak_logic_poll/views/createpoll/poll_entity_question/poll_entity_question_view.dart';
 
 class ManualEnterView extends StatefulWidget {
   @override
@@ -67,7 +66,7 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            ManualEnterView()));
+                                            PollEntityQuestionView()));
                               },
                               child: SvgPicture.asset(
                                   'assets/images/left_arrow.svg'))))
@@ -407,6 +406,7 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                                           fontWeight:
                                                                               FontWeight.w600))
                                                                 ])))),
+                                                SizedBox(height: 150),
                                                 MainButton(
                                                     title: 'Next Step',
                                                     color: pinkColor,
@@ -420,28 +420,32 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                               curve: Curves
                                                                   .easeInOut);
                                                     }),
-                                                Positioned(
-                                                    bottom: 20.0,
-                                                    left: 0.0,
-                                                    right: 0.0,
-                                                    child: DotsIndicator(
-                                                        onTap: (position) {
-                                                          _pageController
-                                                              .jumpToPage(
-                                                                  position);
-                                                        },
-                                                        dotsCount: 3,
-                                                        position: int.parse(
-                                                            currentPage
-                                                                .toStringAsFixed(
-                                                                    0)),
-                                                        decorator:
-                                                            DotsDecorator(
-                                                                color: Color(
-                                                                    4291680496),
-                                                                activeColor:
-                                                                    Colors
-                                                                        .pink)))
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          top: 12),
+                                                  child: Positioned(
+                                                      bottom: 20.0,
+                                                      left: 0.0,
+                                                      right: 0.0,
+                                                      child: DotsIndicator(
+                                                          onTap: (position) {
+                                                            _pageController
+                                                                .jumpToPage(
+                                                                    position);
+                                                          },
+                                                          dotsCount: 3,
+                                                          position: int.parse(
+                                                              currentPage
+                                                                  .toStringAsFixed(
+                                                                      0)),
+                                                          decorator: DotsDecorator(
+                                                              color: Color(
+                                                                  4291680496),
+                                                              activeColor:
+                                                                  Colors
+                                                                      .pink))),
+                                                )
                                               ])
                                             ]))))
                                   ])

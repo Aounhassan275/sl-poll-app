@@ -1,21 +1,21 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:image_stack/image_stack.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
-import 'package:speak_logic_poll/views/Invitations/Accept_Invitation/Accept_Invitation.dart';
 import 'package:speak_logic_poll/views/Invitations/Create_New_Invitations/create_Invitations_view.dart';
 import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
+import 'package:speak_logic_poll/views/createpoll/home/home_screen/home_view.dart';
 import 'package:toggle_switch/toggle_switch.dart';
-import 'package:image_stack/image_stack.dart';
 
-class SendReceiveInvitation extends StatefulWidget {
-  const SendReceiveInvitation({super.key});
+class HomeScreenView extends StatefulWidget {
+  const HomeScreenView({super.key});
 
   @override
-  State<SendReceiveInvitation> createState() => _SendReceiveInvitationState();
+  State<HomeScreenView> createState() => _HomeScreenViewState();
 }
 
-class _SendReceiveInvitationState extends State<SendReceiveInvitation> {
+class _HomeScreenViewState extends State<HomeScreenView> {
   List<String> images = [
     "https://images.unsplash.com/photo-1458071103673-6a6e4c4a3413?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
     "https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80",
@@ -30,80 +30,82 @@ class _SendReceiveInvitationState extends State<SendReceiveInvitation> {
   bool _isSendTab = true;
   bool _isReceiveTab = false;
   int initialLabelIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
+        textDirection: TextDirection.rtl,
+        child: Scaffold(
+          appBar: AppBar(
             backgroundColor: Colors.white,
-            toolbarHeight: 72,
+            toolbarHeight: 80,
             actions: [
               Padding(
-                padding: const EdgeInsets.only(left: 20, top: 30),
+                padding: const EdgeInsets.only(left: 15),
                 child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => CreateNewInvitation()),
-                    );
-                  },
-                  child: Directionality(
-                    textDirection: TextDirection.ltr,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: lightGrey,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 14, right: 17),
-                        child: Row(
-                          children: [
-                            SvgPicture.asset('assets/images/addfriend.svg'),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 10, right: 10),
-                              child: Text(
-                                'New Invitation',
-                                style: TextStyle(
-                                    fontFamily: 'Roboto',
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                    color: maincolor),
-                              ),
-                            ),
-                            SvgPicture.asset('assets/images/plus.svg'),
-                          ],
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomeView()),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 40,
+                          width: 40,
+                          child: SvgPicture.asset(
+                            'assets/images/list-filter-blue.svg',
+                            fit: BoxFit.scaleDown,
+                          ),
                         ),
-                      ),
-                    ),
-                  ),
-                ),
+                        Container(
+                          height: 40,
+                          width: 40,
+                          child: SvgPicture.asset(
+                            '',
+                            fit: BoxFit.scaleDown,
+                          ),
+                        ),
+                        Container(
+                          height: 40,
+                          width: 40,
+                          child: SvgPicture.asset(
+                            'assets/images/list-filter-blue.svg',
+                            fit: BoxFit.scaleDown,
+                          ),
+                        ),
+                        Container(
+                          height: 40,
+                          width: 40,
+                          child: SvgPicture.asset(
+                            'assets/images/list-filter-blue.svg',
+                            fit: BoxFit.scaleDown,
+                          ),
+                        ),
+                      ],
+                    )),
               ),
             ],
-            leading: Padding(
-              padding: const EdgeInsets.only(right: 20, top: 30),
-              child: Builder(
-                  builder: (context) => InkWell(
-                      onTap: () => Scaffold.of(context).openDrawer(),
-                      child: SvgPicture.asset(
-                        'assets/images/menu_blue.svg',
-                        fit: BoxFit.scaleDown,
-                      ))),
+            leading: Builder(
+              builder: (context) => InkWell(
+                onTap: () => Scaffold.of(context).openDrawer(),
+                child: SvgPicture.asset(
+                  'assets/images/menu_blue.svg',
+                  fit: BoxFit.scaleDown,
+                ),
+              ),
             ),
             elevation: 0,
-            iconTheme: IconThemeData(
-              color: Colors.white,
-            )),
-        drawer: Drawer(child: DrawerScreenView()),
-        body: Directionality(
-          textDirection: TextDirection.ltr,
-          child: SafeArea(
+            iconTheme: IconThemeData(color: Colors.white),
+          ),
+          drawer: Drawer(child: DrawerScreenView()),
+          backgroundColor: Colors.white,
+          body: SafeArea(
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                   Padding(
+                  Padding(
                     padding: EdgeInsets.only(top: 20, bottom: 20),
                     child: ToggleSwitch(
                       minWidth: MediaQuery.of(context).size.width,
@@ -2270,23 +2272,14 @@ class _SendReceiveInvitationState extends State<SendReceiveInvitation> {
                                       child: Padding(
                                         padding: const EdgeInsets.only(
                                             top: 10, bottom: 10),
-                                        child: InkWell(
-                                          onTap: () {
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        AccepInvitation()));
-                                          },
-                                          child: Center(
-                                            child: Text(
-                                              'Accept',
-                                              style: TextStyle(
-                                                  fontFamily: 'Roboto',
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: Colors.white),
-                                            ),
+                                        child: Center(
+                                          child: Text(
+                                            'Accept',
+                                            style: TextStyle(
+                                                fontFamily: 'Roboto',
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w600,
+                                                color: Colors.white),
                                           ),
                                         ),
                                       ),
@@ -2326,8 +2319,6 @@ class _SendReceiveInvitationState extends State<SendReceiveInvitation> {
               ),
             ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
