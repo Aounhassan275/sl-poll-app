@@ -656,6 +656,7 @@ class _SendReceiveInvitationState extends State<SendReceiveInvitation> {
                                         ),
                                         Row(
                                           children: [
+                                            ///////////////////////////checkbox///////////////////////////////
                                             Checkbox(
                                                 side: BorderSide(
                                                     color: green, width: 0),
