@@ -16,11 +16,11 @@ import 'package:speak_logic_poll/views/createpoll/change_password/change_passwor
 import 'package:speak_logic_poll/views/createpoll/create_poll_event/create_poll_event_view.dart';
 import 'package:speak_logic_poll/views/createpoll/create_poll_straight/create_poll_straight_view.dart';
 import 'package:speak_logic_poll/views/createpoll/help/help_view.dart';
-import 'package:speak_logic_poll/views/createpoll/enter/manual_enter/manual_enter_view1.dart';
+import 'package:speak_logic_poll/views/createpoll/enter/manual_enter/manual_enter_view.dart';
 import 'package:speak_logic_poll/views/createpoll/home/home_screen/wellcome_home_binding.dart';
 import 'package:speak_logic_poll/views/createpoll/home/home_screen/wellcome_home_view.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_4/manual_enter_view4.dart';
-import 'package:speak_logic_poll/views/createpoll/enter/automatic_enter_1/automatic_enter_view2.dart';
+import 'package:speak_logic_poll/views/createpoll/enter/automatic_enter/automatic_enter_view.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_6/manual_enter_view6.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_7/manual_enter_view7.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_8/manual_enter_view8.dart';
