@@ -47,34 +47,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Fl Speak Logic Poll",
       initialBinding: HomeScreenBinding(),
-<<<<<<< HEAD
-      home: Topcontainer(
-        
-        //   screenName: 'false',
-        //   showimg6: true,
-        //   showimg7: true,
-        //   showimg2second: true,
-        //   showimg3second: true,
-        //   showimg6second: true,
-        //   showimg5second: true,
-        img1: 'assets/images/listfilter.svg',
-        img2: 'assets/images/serverbluedark.svg',
-        //'assets/images/serverblue.svg',
-        // 'assets/images/server.svg',
-
-        img3: 'assets/images/maximize.svg',
-        img4: 'assets/images/search.svg',
-        img5: 'assets/images/Searchs.svg',
-        img6: 'assets/images/menu.svg',
-        img7: 'assets/images/grid.svg',
-        //   img5second: 'assets/images/Searchwhite.svg',
-        //   img2second: 'assets/images/serverblue.svg',
-        //   img3second: 'assets/images/maximizeblue.svg',
-        //   img6second: 'assets/images/menublue.svg',
-      ),
-=======
       home: BottomNavbar(),
->>>>>>> 64d4fd8b3ba929ff7121af696381b67e61109c17
       getPages: AppPages.pages,
     );
   }
