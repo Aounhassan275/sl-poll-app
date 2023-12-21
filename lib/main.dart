@@ -6,6 +6,7 @@ import 'package:speak_logic_poll/components/topcontainer.dart';
 import 'package:speak_logic_poll/routes/app_pages.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/themes/themes.dart';
+import 'package:speak_logic_poll/views/Bottom_Navbar/Bottom_Navbar.dart';
 import 'package:speak_logic_poll/views/auth/forgot/forgot_binding.dart';
 import 'package:speak_logic_poll/views/auth/forgot/forgot_view.dart';
 import 'package:speak_logic_poll/views/auth/polls/polls_view.dart';
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Fl Speak Logic Poll",
       initialBinding: HomeScreenBinding(),
+<<<<<<< HEAD
       home: Topcontainer(
         
         //   screenName: 'false',
@@ -70,6 +72,9 @@ class MyApp extends StatelessWidget {
         //   img3second: 'assets/images/maximizeblue.svg',
         //   img6second: 'assets/images/menublue.svg',
       ),
+=======
+      home: BottomNavbar(),
+>>>>>>> 64d4fd8b3ba929ff7121af696381b67e61109c17
       getPages: AppPages.pages,
     );
   }
