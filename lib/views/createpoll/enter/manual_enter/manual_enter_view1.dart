@@ -8,6 +8,7 @@ import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
 import 'package:speak_logic_poll/views/createpoll/poll_entity_question/poll_entity_question_view.dart';
+import 'package:speak_logic_poll/views/createpoll/read_mode6/read_mode_view6.dart';
 
 class ManualEnterView extends StatefulWidget {
   @override
@@ -1340,176 +1341,176 @@ class _ManualEnterViewState extends State<ManualEnterView> {
                                                                                   MainButton(title: 'No', color1: maincolor, buttonWidth: 0.38, onPressed: () {}, color: violet)
                                                                                 ]))
                                                                           ]))))),
+                                                      //   Visibility(
+                                                      //       visible:
+                                                      //           isSolutionFunctionVisible,
+                                                      //       child: Column(
+                                                      //           children: [
+                                                      //             Padding(
+                                                      //                 padding: const EdgeInsets
+                                                      //                     .only(
+                                                      //                     top: 8),
+                                                      //                 child: Row(
+                                                      //                     mainAxisAlignment:
+                                                      //                         MainAxisAlignment.center,
+                                                      //                     children: [
+                                                      //                       Padding(
+                                                      //                         padding:
+                                                      //                             const EdgeInsets.only(top: 50),
+                                                      //                         child:
+                                                      //                             Container(
+                                                      //                           width: 200,
+                                                      //                           height: 90,
+                                                      //                           child: RichText(
+                                                      //                               text: TextSpan(children: [
+                                                      //                             TextSpan(
+                                                      //                                 text: 'Is ',
+                                                      //                                 style: TextStyle(
+                                                      //                                   color: maincolor,
+                                                      //                                   fontSize: 20,
+                                                      //                                   fontFamily: 'Roboto',
+                                                      //                                   fontWeight: FontWeight.w600,
+                                                      //                                 )),
+                                                      //                             TextSpan(
+                                                      //                               text: 'Dirty Oil',
+                                                      //                               style: TextStyle(
+                                                      //                                 color: pinkColor,
+                                                      //                                 fontSize: 20,
+                                                      //                                 fontFamily: 'Roboto',
+                                                      //                                 fontWeight: FontWeight.w600,
+                                                      //                               ),
+                                                      //                             ),
+                                                      //                             TextSpan(
+                                                      //                                 text: '\nproperly identified as \n',
+                                                      //                                 style: TextStyle(
+                                                      //                                   color: maincolor,
+                                                      //                                   fontSize: 20,
+                                                      //                                   fontFamily: 'Roboto',
+                                                      //                                   fontWeight: FontWeight.w600,
+                                                      //                                 )),
+                                                      //                             TextSpan(
+                                                      //                               text: 'Dirty Oil Problem',
+                                                      //                               style: TextStyle(
+                                                      //                                 color: pinkColor,
+                                                      //                                 fontSize: 20,
+                                                      //                                 fontFamily: 'Roboto',
+                                                      //                                 fontWeight: FontWeight.w600,
+                                                      //                               ),
+                                                      //                             ),
+                                                      //                             TextSpan(
+                                                      //                                 text: ' ?',
+                                                      //                                 style: TextStyle(
+                                                      //                                   color: maincolor,
+                                                      //                                   fontSize: 20,
+                                                      //                                   fontFamily: 'Roboto',
+                                                      //                                   fontWeight: FontWeight.w600,
+                                                      //                                 ))
+                                                      //                           ])),
+                                                      //                         ),
+                                                      //                       ),
+                                                      //                     ])),
+                                                      //             Padding(
+                                                      //                 padding: const EdgeInsets
+                                                      //                     .only(
+                                                      //                     top:
+                                                      //                         100),
+                                                      //                 child: Row(
+                                                      //                     mainAxisAlignment:
+                                                      //                         MainAxisAlignment.center,
+                                                      //                     children: [
+                                                      //                       MainButton(
+                                                      //                           title: 'Yes',
+                                                      //                           color1: maincolor,
+                                                      //                           buttonWidth: 0.38,
+                                                      //                           onPressed: () {},
+                                                      //                           color: violet),
+                                                      //                       SizedBox(
+                                                      //                         width:
+                                                      //                             10,
+                                                      //                       ),
+                                                      //                       MainButton(
+                                                      //                           title: 'No',
+                                                      //                           color1: maincolor,
+                                                      //                           buttonWidth: 0.38,
+                                                      //                           onPressed: () {},
+                                                      //                           color: violet)
+                                                      //                     ]))
+                                                      //           ]))
+                                                      // ])),
+                                                      // Visibility(
+                                                      //   visible: isProblemVisible,
+                                                      //   child: Padding(
+                                                      //       padding:
+                                                      //           const EdgeInsets.only(
+                                                      //               top: 157,
+                                                      //               bottom: 20),
+                                                      //       child: MainButton(
+                                                      //           title: 'Save Poll',
+                                                      //           color1: white,
+                                                      //           onPressed: () {
+                                                      //             Get.toNamed(
+                                                      //                 AppRoutes
+                                                      //                     .readmode1,
+                                                      //                 arguments: isSelected1
+                                                      //                     ? "1"
+                                                      //                     : isSelected2
+                                                      //                         ? "2"
+                                                      //                         : isSelected3
+                                                      //                             ? "3"
+                                                      //                             : isSelected1);
+                                                      //           },
+                                                      //           color: pinkColor)),
+                                                      // ),
                                                       Visibility(
-                                                          visible:
-                                                              isSolutionFunctionVisible,
-                                                          child: Column(
-                                                              children: [
-                                                                Padding(
-                                                                    padding: const EdgeInsets
-                                                                        .only(
-                                                                        top: 8),
-                                                                    child: Row(
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.center,
-                                                                        children: [
-                                                                          Padding(
-                                                                            padding:
-                                                                                const EdgeInsets.only(top: 50),
-                                                                            child:
-                                                                                Container(
-                                                                              width: 200,
-                                                                              height: 90,
-                                                                              child: RichText(
-                                                                                  text: TextSpan(children: [
-                                                                                TextSpan(
-                                                                                    text: 'Is ',
-                                                                                    style: TextStyle(
-                                                                                      color: maincolor,
-                                                                                      fontSize: 20,
-                                                                                      fontFamily: 'Roboto',
-                                                                                      fontWeight: FontWeight.w600,
-                                                                                    )),
-                                                                                TextSpan(
-                                                                                  text: 'Dirty Oil',
-                                                                                  style: TextStyle(
-                                                                                    color: pinkColor,
-                                                                                    fontSize: 20,
-                                                                                    fontFamily: 'Roboto',
-                                                                                    fontWeight: FontWeight.w600,
-                                                                                  ),
-                                                                                ),
-                                                                                TextSpan(
-                                                                                    text: '\nproperly identified as \n',
-                                                                                    style: TextStyle(
-                                                                                      color: maincolor,
-                                                                                      fontSize: 20,
-                                                                                      fontFamily: 'Roboto',
-                                                                                      fontWeight: FontWeight.w600,
-                                                                                    )),
-                                                                                TextSpan(
-                                                                                  text: 'Dirty Oil Problem',
-                                                                                  style: TextStyle(
-                                                                                    color: pinkColor,
-                                                                                    fontSize: 20,
-                                                                                    fontFamily: 'Roboto',
-                                                                                    fontWeight: FontWeight.w600,
-                                                                                  ),
-                                                                                ),
-                                                                                TextSpan(
-                                                                                    text: ' ?',
-                                                                                    style: TextStyle(
-                                                                                      color: maincolor,
-                                                                                      fontSize: 20,
-                                                                                      fontFamily: 'Roboto',
-                                                                                      fontWeight: FontWeight.w600,
-                                                                                    ))
-                                                                              ])),
-                                                                            ),
-                                                                          ),
-                                                                        ])),
-                                                                Padding(
-                                                                    padding: const EdgeInsets
-                                                                        .only(
-                                                                        top:
-                                                                            100),
-                                                                    child: Row(
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.center,
-                                                                        children: [
-                                                                          MainButton(
-                                                                              title: 'Yes',
-                                                                              color1: maincolor,
-                                                                              buttonWidth: 0.38,
-                                                                              onPressed: () {},
-                                                                              color: violet),
-                                                                          SizedBox(
-                                                                            width:
-                                                                                10,
-                                                                          ),
-                                                                          MainButton(
-                                                                              title: 'No',
-                                                                              color1: maincolor,
-                                                                              buttonWidth: 0.38,
-                                                                              onPressed: () {},
-                                                                              color: violet)
-                                                                        ]))
-                                                              ]))
-                                                    ])),
-                                                Visibility(
-                                                  visible: isProblemVisible,
-                                                  child: Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              top: 157,
-                                                              bottom: 20),
-                                                      child: MainButton(
-                                                          title: 'Save Poll',
-                                                          color1: white,
-                                                          onPressed: () {
-                                                            Get.toNamed(
-                                                                AppRoutes
-                                                                    .readmode1,
-                                                                arguments: isSelected1
-                                                                    ? "1"
-                                                                    : isSelected2
-                                                                        ? "2"
-                                                                        : isSelected3
-                                                                            ? "3"
-                                                                            : isSelected1);
-                                                          },
-                                                          color: pinkColor)),
-                                                ),
-                                                // Visibility(
-                                                //   visible: isProblemVisible &&
-                                                //       isSolutionVisible,
-                                                //   child: Padding(
-                                                //       padding:
-                                                //           const EdgeInsets.only(
-                                                //               top: 157,
-                                                //               bottom: 20),
-                                                //       child: MainButton(
-                                                //           title: 'Save Poll',
-                                                //           color1: white,
-                                                //           onPressed: () {
-                                                //             Navigator.push(
-                                                //                 context,
-                                                //                 MaterialPageRoute(
-                                                //                     builder: (context) =>
-                                                //                         Visibility(
-                                                //                             child:
-                                                //                                 ReadModeView6())));
-                                                //           },
-                                                //           color: pinkColor)),
-                                                // ),
-                                                Positioned(
-                                                    bottom: 20.0,
-                                                    left: 0.0,
-                                                    right: 0.0,
-                                                    child: DotsIndicator(
-                                                        onTap: (position) {
-                                                          _pageController
-                                                              .jumpToPage(
-                                                                  position);
-                                                        },
-                                                        dotsCount: 3,
-                                                        position: int.parse(
-                                                            currentPage
-                                                                .toStringAsFixed(
-                                                                    0)),
-                                                        decorator:
-                                                            DotsDecorator(
-                                                                color: Color(
-                                                                    4291680496),
-                                                                activeColor:
-                                                                    Colors
-                                                                        .pink)))
+                                                        visible:
+                                                            isProblemVisible &&
+                                                                isSolutionVisible,
+                                                        child: Padding(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                    .only(
+                                                                    top: 157,
+                                                                    bottom: 20),
+                                                            child: MainButton(
+                                                                title:
+                                                                    'Save Poll',
+                                                                color1: white,
+                                                                onPressed: () {
+                                                                  Get.toNamed(
+                                                                      AppRoutes
+                                                                          .wellcome);
+                                                                },
+                                                                color:
+                                                                    pinkColor)),
+                                                      ),
+                                                      Positioned(
+                                                          bottom: 20.0,
+                                                          left: 0.0,
+                                                          right: 0.0,
+                                                          child: DotsIndicator(
+                                                              onTap:
+                                                                  (position) {
+                                                                _pageController
+                                                                    .jumpToPage(
+                                                                        position);
+                                                              },
+                                                              dotsCount: 3,
+                                                              position: int.parse(
+                                                                  currentPage
+                                                                      .toStringAsFixed(
+                                                                          0)),
+                                                              decorator: DotsDecorator(
+                                                                  color: Color(
+                                                                      4291680496),
+                                                                  activeColor:
+                                                                      Colors
+                                                                          .pink)))
+                                                    ]))
                                               ]))))
                                     ])
                                   ])
                                 ]);
                             }
-                            return null;
                           }))
                 ]))));
   }

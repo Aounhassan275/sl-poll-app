@@ -8,8 +8,12 @@ import 'package:speak_logic_poll/components/container_inputfield_CreateEvent.dar
 import 'package:speak_logic_poll/components/divider.dart';
 import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
+import 'package:speak_logic_poll/views/Bottom_Navbar/Bottom_Navbar.dart';
+import 'package:speak_logic_poll/views/Invitations/Send_Receive_Invitation/Send_Receive_Invitation_View.dart';
+import 'package:speak_logic_poll/views/auth/results/results_view.dart';
 import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
-import 'package:speak_logic_poll/views/createpoll/home/home_screen/home_view.dart';
+import 'package:speak_logic_poll/views/createpoll/home/home_screen/wellcome_home_view.dart';
+import 'package:speak_logic_poll/views/home/Home_Screens/home_screen_view.dart';
 
 class CreatePollFromEventView extends StatefulWidget {
   const CreatePollFromEventView({Key? key}) : super(key: key);
@@ -39,7 +43,7 @@ class _CreatePollFromEventViewState extends State<CreatePollFromEventView> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HomeView()),
+                    MaterialPageRoute(builder: (context) => WellcomeHomeView()),
                   );
                 },
                 child: Container(
@@ -387,7 +391,11 @@ class _CreatePollFromEventViewState extends State<CreatePollFromEventView> {
                                 color: maincolor,
                                 color1: white,
                                 onPressed: () {
-                                  Get.toNamed(AppRoutes.home);
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              BottomNavbar()));
                                 },
                               ),
                             ),

@@ -200,7 +200,9 @@ class _ProfileViewState extends State<ProfileView> {
                             child: MainButton(
                               title: 'Save',
                               color: violet,
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.toNamed(AppRoutes.wellcome);
+                              },
                             ),
                           ),
                         ],

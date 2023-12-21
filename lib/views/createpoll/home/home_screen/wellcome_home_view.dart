@@ -6,14 +6,14 @@ import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/utils/fontWeight.dart';
 import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class WellcomeHomeView extends StatefulWidget {
+  const WellcomeHomeView({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<WellcomeHomeView> createState() => _WellcomeHomeViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _WellcomeHomeViewState extends State<WellcomeHomeView> {
   bool isCreatePollStraightSelected = false;
   bool isCreatePollFromEventSelected = false;
 
@@ -191,7 +191,7 @@ class _HomeViewState extends State<HomeView> {
                                                           height: 60,
                                                           child:
                                                               SvgPicture.asset(
-                                                            'assets/images/selection.svg',
+                                                            'assets/images/selection_home.svg',
                                                           )),
                                                     )
                                                   ])),
@@ -276,7 +276,7 @@ class _HomeViewState extends State<HomeView> {
                                                   ),
                                                   Center(
                                                     child: SvgPicture.asset(
-                                                        'assets/images/calendar.svg'),
+                                                        'assets/images/calendar_home.svg'),
                                                   ),
                                                 ],
                                               ),

@@ -33,11 +33,7 @@ class _PollEntityQuestionViewState extends State<PollEntityQuestionView> {
                 width: 40,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => CreatePollStraightView()),
-                    );
+                    Get.toNamed(AppRoutes.wellcome);
                   },
                   child: SvgPicture.asset(
                     'assets/images/left_arrow.svg',

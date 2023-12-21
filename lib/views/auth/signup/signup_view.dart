@@ -10,7 +10,7 @@ import 'package:speak_logic_poll/components/password_inputfield.dart';
 import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/views/auth/signup/signup_controller.dart';
-import 'package:speak_logic_poll/views/createpoll/home/home_screen/home_view.dart';
+import 'package:speak_logic_poll/views/createpoll/home/home_screen/wellcome_home_view.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
@@ -149,7 +149,7 @@ class _SignUpViewState extends State<SignUpView> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomeView()),
+                  MaterialPageRoute(builder: (context) => WellcomeHomeView()),
                 );
               },
               child: MainButton(

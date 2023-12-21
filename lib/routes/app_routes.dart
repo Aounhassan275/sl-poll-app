@@ -13,6 +13,7 @@ class AppRoutes {
   static const pollscreen = '/pollscreen';
 
   static const pollscreenbrowse = '/pollscreenbrowse';
+  static const wellcome = '/wellcome';
   static const home = '/home';
   static const drawer = '/drawer';
   static const profile = '/profile';
@@ -39,9 +40,4 @@ class AppRoutes {
   static const readmode12 = '/readmode12';
   static const readmode13 = '/readmode13';
   static const homescreen = '/homescreen';
-
-
-
-  
-
 }

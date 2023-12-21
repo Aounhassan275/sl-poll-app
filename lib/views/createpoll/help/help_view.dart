@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:speak_logic_poll/components/button.dart';
 import 'package:speak_logic_poll/components/divider.dart';
+import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
+import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
 
 class HelpView extends StatefulWidget {
   const HelpView({Key? key}) : super(key: key);
@@ -20,14 +24,19 @@ class _HelpViewState extends State<HelpView> {
         appBar: AppBar(
             toolbarHeight: 80,
             actions: [
-              Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: Container(
-                    height: 40,
-                    width: 40,
-                    child: SvgPicture.asset(
-                      'assets/images/left_arrow.svg',
-                    )),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed(AppRoutes.wellcome);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: Container(
+                      height: 40,
+                      width: 40,
+                      child: SvgPicture.asset(
+                        'assets/images/left_arrow.svg',
+                      )),
+                ),
               ),
             ],
             leading: Builder(
@@ -39,6 +48,7 @@ class _HelpViewState extends State<HelpView> {
                     ))),
             elevation: 0,
             iconTheme: IconThemeData(color: Colors.white)),
+        drawer: Drawer(child: DrawerScreenView()),
         body: Directionality(
           textDirection: TextDirection.ltr,
           child: SafeArea(
@@ -199,7 +209,9 @@ class _HelpViewState extends State<HelpView> {
                                   title: 'Send Message',
                                   color: maincolor,
                                   color1: white,
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Get.toNamed(AppRoutes.wellcome);
+                                  },
                                 ),
                               ),
                             ],
