@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -7,7 +7,7 @@ import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/views/Invitations/Send_Receive_Invitation/Send_Receive_Invitation_View.dart';
 import 'package:speak_logic_poll/views/auth/polls/polls_view.dart';
 import 'package:speak_logic_poll/views/auth/results/results_view.dart';
-import 'package:speak_logic_poll/views/home/home_screen_view.dart';
+import 'package:speak_logic_poll/views/home/Home_Screens/home_screen_view.dart';
 
 class BottomNavbar extends StatefulWidget {
   const BottomNavbar({super.key});

@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 import 'package:speak_logic_poll/views/createpoll/profile/profile_controller.dart';
 
-class HomeBinding extends Bindings {
+class WellcomeHomeBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => HomeController());
+    Get.lazyPut(() => WellcomeHomeController());
   }
 }

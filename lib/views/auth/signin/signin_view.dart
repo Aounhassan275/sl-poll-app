@@ -11,7 +11,7 @@ import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/utils/fontWeight.dart';
 import 'package:speak_logic_poll/views/auth/signin/signin_controller.dart';
-import 'package:speak_logic_poll/views/createpoll/home/home_screen/home_view.dart';
+import 'package:speak_logic_poll/views/createpoll/home/home_screen/wellcome_home_view.dart';
 
 class SignInView extends StatefulWidget {
   const SignInView({super.key});
@@ -130,7 +130,7 @@ class _SignInViewState extends State<SignInView> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HomeView()),
+                MaterialPageRoute(builder: (context) => WellcomeHomeView()),
               );
             },
             child: Container(

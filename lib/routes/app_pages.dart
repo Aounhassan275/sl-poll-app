@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:speak_logic_poll/components/topcontainer.dart';
 import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/views/auth/forgot/forgot_binding.dart';
 import 'package:speak_logic_poll/views/auth/forgot/forgot_view.dart';
@@ -18,6 +17,8 @@ import 'package:speak_logic_poll/views/createpoll/create_poll_event/create_poll_
 import 'package:speak_logic_poll/views/createpoll/create_poll_straight/create_poll_straight_view.dart';
 import 'package:speak_logic_poll/views/createpoll/help/help_view.dart';
 import 'package:speak_logic_poll/views/createpoll/enter/manual_enter/manual_enter_view1.dart';
+import 'package:speak_logic_poll/views/createpoll/home/home_screen/wellcome_home_binding.dart';
+import 'package:speak_logic_poll/views/createpoll/home/home_screen/wellcome_home_view.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_4/manual_enter_view4.dart';
 import 'package:speak_logic_poll/views/createpoll/enter/automatic_enter_1/automatic_enter_view2.dart';
 import 'package:speak_logic_poll/views/createpoll/manual_enter_6/manual_enter_view6.dart';
@@ -27,20 +28,17 @@ import 'package:speak_logic_poll/views/createpoll/manual_enter_9/manual_enter_vi
 import 'package:speak_logic_poll/views/createpoll/poll_entity_question/poll_entity_question_view.dart';
 import 'package:speak_logic_poll/views/createpoll/read_mode1/read_mode_view1.dart';
 import 'package:speak_logic_poll/views/createpoll/profile/profile_view.dart';
-
 import 'package:speak_logic_poll/views/createpoll/read_mode11/read_mode_view11.dart';
 import 'package:speak_logic_poll/views/createpoll/read_mode12/read_mode_view12.dart';
 import 'package:speak_logic_poll/views/createpoll/read_mode13/read_mode_view13.dart';
-
 import 'package:speak_logic_poll/views/createpoll/read_mode3/read_mode_view3.dart';
-
 import 'package:speak_logic_poll/views/createpoll/read_mode5/read_mode_view5.dart';
 import 'package:speak_logic_poll/views/createpoll/read_mode6/read_mode_view6.dart';
 import 'package:speak_logic_poll/views/createpoll/read_mode7/read_mode_view7.dart';
-
 import 'package:speak_logic_poll/views/createpoll/read_mode9/read_mode_view9.dart';
 import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
-import 'package:speak_logic_poll/views/home/home_screen_view.dart';
+import 'package:speak_logic_poll/views/home/Home_Screens/home_screen_binding.dart';
+import 'package:speak_logic_poll/views/home/Home_Screens/home_screen_view.dart';
 import 'package:speak_logic_poll/views/splash/splash_binding.dart';
 import 'package:speak_logic_poll/views/splash/splash_view.dart';
 import 'package:speak_logic_poll/views/success/success_view.dart';
@@ -128,9 +126,14 @@ class AppPages {
       // binding: PollEntityQuestionBinding(),
     ),
     GetPage(
-      name: AppRoutes.homescreen,
+      name: AppRoutes.wellcome,
+      page: () => WellcomeHomeView(),
+      binding: WellcomeHomeBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.home,
       page: () => HomeScreenView(),
-      // binding: HomeScreenBinding(),
+      binding: HomeScreenBinding(),
     ),
     GetPage(
       name: AppRoutes.manualenter1,
@@ -197,7 +200,6 @@ class AppPages {
       page: () => ReadModeView9(),
       // binding: ReadModeBinding9(),
     ),
-    
     GetPage(
       name: AppRoutes.readmode11,
       page: () => ReadModeView11(),
@@ -213,7 +215,5 @@ class AppPages {
       page: () => ReadModeView13(),
       // binding: ReadModeBinding13(),
     ),
-
-    
   ];
 }

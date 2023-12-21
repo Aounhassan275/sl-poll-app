@@ -6,7 +6,7 @@ import 'package:speak_logic_poll/components/divider.dart';
 import 'package:speak_logic_poll/routes/app_routes.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/views/createpoll/home/Drawer/drawer_view.dart';
-import 'package:speak_logic_poll/views/createpoll/home/home_screen/home_view.dart';
+import 'package:speak_logic_poll/views/createpoll/home/home_screen/wellcome_home_view.dart';
 
 enum ProductTypeEnum { Downloadable, Deliverable }
 
@@ -38,7 +38,8 @@ class _CreatePollStraightViewState extends State<CreatePollStraightView> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomeView()),
+                      MaterialPageRoute(
+                          builder: (context) => WellcomeHomeView()),
                     );
                   },
                   child: Container(

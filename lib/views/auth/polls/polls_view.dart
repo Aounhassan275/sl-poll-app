@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:speak_logic_poll/components/card_containers_polls.dart';
-import 'package:speak_logic_poll/components/topcontainer.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:toggle_switch/toggle_switch.dart';
-import 'package:filter_list/filter_list.dart';
 
 class PollsView extends StatefulWidget {
   const PollsView({super.key});
@@ -61,8 +58,6 @@ class _PollsViewState extends State<PollsView> {
   //   );
   // }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +65,6 @@ class _PollsViewState extends State<PollsView> {
       body: SafeArea(
           child: Container(
         padding: EdgeInsets.only(top: 20, left: 15, right: 15),
-        
         child: Column(
           children: [
             // Topcontainer(
@@ -146,11 +140,9 @@ class _PollsViewState extends State<PollsView> {
                       containertext2: 'Solution',
                       containertext3: 'Solution Function');
                 }),
-           
           ],
         ),
-      )
-      ),
+      )),
     );
   }
 }
