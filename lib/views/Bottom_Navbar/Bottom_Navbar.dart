@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:speak_logic_poll/components/topcontainer.dart';
 import 'package:speak_logic_poll/utils/colors.dart';
 import 'package:speak_logic_poll/views/Invitations/Send_Receive_Invitation/Send_Receive_Invitation_View.dart';
 import 'package:speak_logic_poll/views/auth/polls/polls_view.dart';
@@ -20,7 +21,8 @@ class _BottomNavbarState extends State<BottomNavbar> {
   int _currentIndex = 0;
   final List<Widget> _screens = [
     HomeScreenView(),
-    PollsView(),
+     PollsView(),
+ 
     ResultsView(),
     SendReceiveInvitation(),
   ];

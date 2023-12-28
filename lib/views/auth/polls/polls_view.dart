@@ -57,7 +57,7 @@ class _PollsViewState extends State<PollsView> {
   //     },
   //   );
   // }
-
+  bool isCheckedToday = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,6 +127,12 @@ class _PollsViewState extends State<PollsView> {
                 physics: BouncingScrollPhysics(),
                 itemBuilder: (BuildContext context, index) {
                   return CardContainersPolls(
+                      value: isCheckedToday,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isCheckedToday = value ?? false;
+                        });
+                      },
                       hading: 'Abcd Poll',
                       subhading: 'Entity in Question:',
                       calendarimg: 'assets/images/calendar.svg',

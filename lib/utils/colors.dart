@@ -22,7 +22,7 @@ const green = Color(4281386401);
 const Grey = Color(0xFFC2C4C6);
 const lightpurple = Color(0xFFA6A0F0);
 const filtertextcolor = Color(4288390846);
-
+const buttonRequestInvitationColor = Color(4283908795);
 //
 
 
